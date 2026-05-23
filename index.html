@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanika Singh — Project & Program Manager | Business Transformation</title>
+  <meta name="description" content="Kanika Singh — Engineer-turned-program manager with 8+ years at Amazon. MBA Pforzheim (Grade 1.5). Open to PM, PMO, Transformation roles in Germany & Europe from Aug 2026." />
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1b2e44;
+      --accent: #2a7ae2;
+      --accent-light: #4f9cf9;
+      --gold: #e8a020;
+      --green: #28a745;
+      --text: #1a1a2e;
+      --text-muted: #5a6a80;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    nav .brand { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none; font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: #fff; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3a5c 100%);
+      color: #fff;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.5rem; }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.6rem;
+    }
+    .hero .location {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.8rem;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-bottom: 2rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      background: rgba(255,255,255,0.07);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .badge:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 1.8rem; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; display: inline-block;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+    .hero-quote {
+      margin-top: 2.5rem;
+      padding: 1.2rem 2rem;
+      background: rgba(255,255,255,0.06);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      max-width: 680px;
+      margin-left: auto; margin-right: auto;
+      text-align: left;
+    }
+    .hero-quote p { font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.85); }
+    .hero-quote .attr { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem; font-style: normal; }
+
+    /* SECTIONS */
+    section { padding: 4rem 2rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .section-divider {
+      width: 44px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    /* METRICS */
+    #metrics { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .metric-card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .metric-card .num {
+      font-size: 2rem; font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .metric-card .num.green { color: var(--green); }
+    .metric-card .num.gold { color: var(--gold); }
+    .metric-card .label {
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-top: 0.4rem; line-height: 1.4;
+    }
+
+    /* ABOUT */
+    #about { background: var(--bg); }
+    .about-body { font-size: 1rem; color: var(--text); line-height: 1.8; }
+    .about-body p { margin-bottom: 1rem; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-highlights {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+    .highlight-chip {
+      background: #e8f0fe; color: var(--accent);
+      border-radius: 20px; padding: 0.3rem 0.9rem;
+      font-size: 0.8rem; font-weight: 600;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 0; top: 0.4rem; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 2.2rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute;
+      left: -1.95rem; top: 0.3rem;
+      width: 12px; height: 12px;
+      background: var(--accent); border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-item .period {
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 0.2rem;
+    }
+    .timeline-item .role { font-size: 1rem; font-weight: 700; color: var(--navy); }
+    .timeline-item .org { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .timeline-item .summary { font-size: 0.9rem; color: var(--text); line-height: 1.6; }
+
+    /* PROJECTS */
+    #projects { background: var(--bg); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 500px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .project-card:hover { box-shadow: 0 8px 32px rgba(42,122,226,0.12); transform: translateY(-2px); }
+    .project-card .icon { font-size: 1.6rem; margin-bottom: 0.7rem; }
+    .project-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .project-card .impact {
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .project-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+    .project-card .results {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .result-tag {
+      background: #f0f7ff; color: var(--accent);
+      border-radius: 4px; padding: 0.2rem 0.6rem;
+      font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* CAPABILITIES */
+    #capabilities { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .caps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .cap-card {
+      padding: 1.4rem;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .cap-card .cap-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .cap-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+    .skill-group { margin-bottom: 1.8rem; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group-title {
+      font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--text);
+    }
+
+    /* CERTIFICATIONS */
+    #certifications { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .cert-item {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 1rem 1.2rem;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .cert-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      background: #e8f0fe;
+    }
+    .cert-item .cert-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+    .cert-item .cert-org { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--navy); }
+    #testimonials .section-title { color: #fff; }
+    #testimonials .section-divider { background: var(--gold); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.4rem;
+    }
+    @media (max-width: 440px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card .source { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .testimonial-card .source strong { color: rgba(255,255,255,0.8); }
+
+    /* EDUCATION */
+    #education { background: var(--bg); }
+    .edu-item {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      padding: 1.4rem 1.6rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .edu-inst { font-size: 0.83rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .edu-grade {
+      margin-left: auto;
+      background: #f0fff4; color: var(--green);
+      border-radius: 6px; padding: 0.3rem 0.8rem;
+      font-size: 0.8rem; font-weight: 700;
+      white-space: nowrap; align-self: flex-start;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--card); border-top: 1px solid var(--border); }
+    .contact-grid {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem 1.4rem;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--navy);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); background: #f0f7ff; color: var(--accent); }
+    .contact-link .icon { font-size: 1rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hero { padding: 3.5rem 1.2rem 3rem; }
+      section { padding: 3rem 1.2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="brand">Kanika Singh</span>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="tag">Open to Full-Time Roles · Aug 2026 · Germany &amp; Europe</div>
+    <h1>Kanika Singh</h1>
+    <p class="subtitle">Project &amp; Program Manager &nbsp;·&nbsp; Business Transformation &nbsp;·&nbsp; Strategic Operations</p>
+    <p class="location">📍 Pforzheim, Germany &nbsp;|&nbsp; MBA Pforzheim University · Grade 1.5</p>
+
+    <div class="hero-badges">
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="badge" target="_blank">
+        <span class="dot" style="background:#0077B5"></span> LinkedIn
+      </a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="badge">
+        <span class="dot" style="background:#D14836"></span> kanikasinghtaurus@gmail.com
+      </a>
+      <span class="badge">
+        <span class="dot" style="background:#28A745"></span> Lean Six Sigma Green Belt
+      </span>
+      <span class="badge">
+        <span class="dot" style="background:#4f9cf9"></span> English · Hindi · German (B1→B2)
+      </span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="btn btn-primary" target="_blank">View LinkedIn Profile</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="btn btn-secondary">Get in Touch</a>
+    </div>
+
+    <div class="hero-quote">
+      <p>"She drove this with the utmost patience… It started very small but finally ended with a huge savings of 4 MM USD annually."</p>
+      <div class="attr">— O A V Raviteja, Associate Project Manager, Amazon Development Centre India</div>
+    </div>
+  </div>
+</header>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="container">
+    <h2 class="section-title">Career Impact at a Glance</h2>
+    <div class="section-divider"></div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="num gold">~$4.5M</div>
+        <div class="label">Annual business impact from flagship transformation</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">450+</div>
+        <div class="label">Process improvement projects managed globally</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">1,600+</div>
+        <div class="label">FTE hours saved annually through Lean improvements</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">35,000+</div>
+        <div class="label">Team members impacted by a single systemic fix</div>
+      </div>
+      <div class="metric-card">
+        <div class="num green">+69.5%</div>
+        <div class="label">Improvement in FBA claim success rates</div>
+      </div>
+      <div class="metric-card">
+        <div class="num green">+30%</div>
+        <div class="label">Customer satisfaction improvement at scale</div>
+      </div>
+      <div class="metric-card">
+        <div class="num green">−30%</div>
+        <div class="label">Decision lag cut via Power BI dashboards</div>
+      </div>
+      <div class="metric-card">
+        <div class="num green">+15%</div>
+        <div class="label">Compliance accuracy across 1,000+ audits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Who I Am</h2>
+    <div class="section-divider"></div>
+    <div class="about-body">
+      <p>I am an engineer-turned-program manager with <strong>8+ years building the structures, reporting systems, and cross-functional coalitions</strong> that allow large organisations to move fast and with confidence. I've managed operations at Amazon's global scale — across EU, US, and India — and am now translating that experience into product strategy and digital transformation at IONOS while completing my <strong>MBA in International Management (Grade 1.5) at Pforzheim University</strong>.</p>
+      <p>My background is unusual: a <strong>B.Tech in Civil Engineering</strong> gave me systems thinking and analytical rigour; Amazon gave me ownership, speed, and operational discipline; my MBA is sharpening my strategic lens and grounding me in the European business context. The combination makes me effective in roles that sit at the <strong>intersection of strategy, execution, and people</strong> — where someone needs to translate ambiguous problems into structured plans that teams can actually execute.</p>
+      <p>I am a <strong>Lean Six Sigma Green Belt</strong> and hold certifications in SAP Business Transformation, Agile Project Management, and AI tooling. I work in English and Hindi natively, and am actively progressing in German (B1 → B2).</p>
+      <div class="about-highlights">
+        <span class="highlight-chip">Lean Six Sigma Green Belt</span>
+        <span class="highlight-chip">SAP Business Transformation</span>
+        <span class="highlight-chip">PMI Agile PM</span>
+        <span class="highlight-chip">Beta Gamma Sigma Honour Society</span>
+        <span class="highlight-chip">Anthropic MCP &amp; Claude Certified</span>
+        <span class="highlight-chip">8+ Years Amazon FBA Operations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Professional Journey</h2>
+    <div class="section-divider"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="period">Oct 2025 – Present</div>
+        <div class="role">Working Student — Product Management &amp; Business Analysis</div>
+        <div class="org">IONOS · Karlsruhe, Germany</div>
+        <div class="summary">Product roadmap support, Power BI performance dashboards (cut decision lag 30%), competitive analysis across 15+ EU players shaping Q1 2026 priorities, STRATO Sweden expansion research, eIDAS QWAC compliance research, AI-enabled workflow design.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Oct 2024 – Aug 2026</div>
+        <div class="role">MBA in International Management <span style="font-weight:400;color:var(--green);">· Grade 1.5</span></div>
+        <div class="org">Pforzheim University · Germany</div>
+        <div class="summary">Industrial management, digital transformation, strategy. Member of Beta Gamma Sigma International Business Honour Society.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Oct 2019 – Oct 2024</div>
+        <div class="role">Project Manager — FBA Business Process Improvement &amp; Change Management</div>
+        <div class="org">Amazon · Hyderabad, India</div>
+        <div class="summary">Led 450+ global process improvement initiatives. Drove $4.5M flagship FBA Claims Transformation programme across 6 global teams. Built and led the AIS innovation pipeline for India operations — managing 115+ ideas per half-year, saving 9,000+ labour hours annually. Represented QA team in Weekly Business Reviews with SQL-driven trend analysis.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Jul 2017 – Sep 2019</div>
+        <div class="role">Senior Quality Auditor — FBA Service Quality &amp; Process Governance</div>
+        <div class="org">Amazon · Hyderabad, India</div>
+        <div class="summary">Designed QA frameworks adopted by 3 operational teams. Built training programmes that achieved 95%+ ramp-up within 3 weeks for 150+ associates. Audited 1,000+ vendor cases. Implemented 20+ SOP updates in 2021 alone with ~95% implementation rate.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Feb 2016 – Jun 2017</div>
+        <div class="role">ML Data Vendor Management Associate — FBA</div>
+        <div class="org">Amazon · Hyderabad, India</div>
+        <div class="summary">Delivered 33+ Lean process improvements saving 1,600+ FTE hours annually. Built decision frameworks adopted network-wide. Developed process logic and documentation that became standard references across the team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="section-divider"></div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="icon">🔄</div>
+        <h3>FBA Claims Transformation Programme</h3>
+        <div class="impact">~$4.5M annually · +69.5% claim success rate</div>
+        <p>Flagship end-to-end programme identifying that a rigid 30/45-day date range constraint was causing legitimate FBA false overage claims to age out of the system. Built the business case from scratch, navigated 6 global cross-functional teams across EU, US, and India, and drove implementation that unlocked ~$383,500/month in additional savings.</p>
+        <div class="results">
+          <span class="result-tag">$4.5M Annual Impact</span>
+          <span class="result-tag">+69.5% Success Rate</span>
+          <span class="result-tag">6 Global Teams</span>
+          <span class="result-tag">Lean Six Sigma · AIS</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">💡</div>
+        <h3>Amazon Innovation Pipeline (AIS) — Programme Lead</h3>
+        <div class="impact">9,000+ labour hours saved · 115+ ideas per half-year</div>
+        <p>Managed Amazon's internal AIS innovation pipeline for India operations as programme lead — full lifecycle from intake to implementation. Built governance structures, coaching programmes, monthly reporting, and Open Office Hours (58 participants in inaugural session). Extended AIS participation rights to India associates for the first time.</p>
+        <div class="results">
+          <span class="result-tag">9,000+ Hours Saved</span>
+          <span class="result-tag">450+ Projects</span>
+          <span class="result-tag">~95% Implementation Rate</span>
+          <span class="result-tag">EU · US · India</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">📊</div>
+        <h3>IONOS Product Analytics &amp; Market Intelligence</h3>
+        <div class="impact">−30% decision lag · 15+ competitors analysed</div>
+        <p>Built connected Power BI dashboards integrating Adobe Analytics, Elastic, and Looker Studio for the Domains, Hosting, and SSL product division. Delivered competitive analysis across 15+ EU market players that directly shaped Q1 2026 product priorities. Conducted market research for STRATO's Sweden expansion and eIDAS QWAC regulatory compliance.</p>
+        <div class="results">
+          <span class="result-tag">−30% Decision Lag</span>
+          <span class="result-tag">15+ Competitors</span>
+          <span class="result-tag">Q1 2026 Roadmap</span>
+          <span class="result-tag">Power BI · Adobe Analytics</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="icon">🏅</div>
+        <h3>QA Excellence Framework — Design &amp; Scale</h3>
+        <div class="impact">+15% compliance · 150+ associates · 95%+ ramp in 3 weeks</div>
+        <p>Designed and scaled Amazon's FBA quality assurance infrastructure from fragmented frameworks to consistent, scalable systems — including audit sheet structures, scoring rubrics, feedback note standards, and SOP governance. Built and delivered the QA Calibration Programme for every new hire batch, achieving 95%+ successful ramp within 3 weeks across 150+ associates.</p>
+        <div class="results">
+          <span class="result-tag">+15% Compliance</span>
+          <span class="result-tag">150+ Associates</span>
+          <span class="result-tag">3 Teams Adopted</span>
+          <span class="result-tag">20+ SOPs in 2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="container">
+    <h2 class="section-title">Core Capabilities</h2>
+    <div class="section-divider"></div>
+    <div class="caps-grid">
+      <div class="cap-card">
+        <div class="cap-title">🏗️ Programme &amp; Project Management</div>
+        <p>End-to-end ownership across complex, multi-team, multi-region environments. RAG reporting, risk escalation, financial tracking, and stakeholder cadences from associate level to senior leadership.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-title">📐 Process Design &amp; Lean Transformation</div>
+        <p>Lean Six Sigma Green Belt. Turns vague process pain into structured, measurable improvement — SOP redesign, workflow automation, and tool enhancements that stick.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-title">📊 KPI Architecture &amp; Data Reporting</div>
+        <p>Defines KPIs from scratch, builds dashboards in Power BI, Looker Studio, and Elastic. Turns data into management-ready narratives using SQL and Python.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-title">🤝 Cross-Functional Stakeholder Management</div>
+        <p>Proven interface between senior leadership, engineering, product, operations, and external partners. Manages escalations to root-cause resolution with clear corrective action for leadership.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-title">📦 Product Thinking &amp; Feature Definition</div>
+        <p>Functions as an internal Product Manager: translating operational insight into product requirements, backlog refinement, competitive analysis, and GTM enablement.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-title">🔄 Change Management &amp; Adoption</div>
+        <p>Rolling out tools, frameworks, and processes across distributed teams — including training design, stakeholder alignment, and adoption tracking that ensures change actually lands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="section-divider"></div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Programme &amp; Project Management</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Strategic Programme Management</span>
+        <span class="skill-tag">Lean Six Sigma (Green Belt)</span>
+        <span class="skill-tag">KPI Design &amp; Reporting</span>
+        <span class="skill-tag">Change Management</span>
+        <span class="skill-tag">Risk &amp; Escalation Management</span>
+        <span class="skill-tag">Stakeholder Management</span>
+        <span class="skill-tag">Budget &amp; Financial Tracking</span>
+        <span class="skill-tag">Stage-Gate Governance</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Product Management</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Roadmap Prioritisation</span>
+        <span class="skill-tag">Backlog Refinement</span>
+        <span class="skill-tag">Competitive Analysis</span>
+        <span class="skill-tag">Market Research</span>
+        <span class="skill-tag">GTM Enablement</span>
+        <span class="skill-tag">User Behaviour Analysis</span>
+        <span class="skill-tag">Feature Definition</span>
+        <span class="skill-tag">Regulatory Research (eIDAS)</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Data, Analytics &amp; Reporting</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Adobe Analytics</span>
+        <span class="skill-tag">Looker Studio</span>
+        <span class="skill-tag">Elasticsearch</span>
+        <span class="skill-tag">Excel (Advanced)</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Platforms &amp; Collaboration</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SAP S/4HANA</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Asana</span>
+        <span class="skill-tag">Confluence</span>
+        <span class="skill-tag">SharePoint</span>
+        <span class="skill-tag">MS Office Suite</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-divider"></div>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <div class="cert-icon">🟢</div>
+        <div>
+          <div class="cert-name">Lean Six Sigma Green Belt</div>
+          <div class="cert-org">Simplilearn · 2022</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🔷</div>
+        <div>
+          <div class="cert-name">SAP Certified — Validating Business Transformation</div>
+          <div class="cert-org">SAP · 2026 (valid to Apr 2027)</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">📋</div>
+        <div>
+          <div class="cert-name">PMI Agile Project Management</div>
+          <div class="cert-org">Project Management Institute · 2025</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🤖</div>
+        <div>
+          <div class="cert-name">Model Context Protocol — Advanced Topics</div>
+          <div class="cert-org">Anthropic · 2026</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🤖</div>
+        <div>
+          <div class="cert-name">Claude 101</div>
+          <div class="cert-org">Anthropic · 2024</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🔄</div>
+        <div>
+          <div class="cert-name">Scrum Advanced</div>
+          <div class="cert-org">LinkedIn Learning · 2025</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">📋</div>
+        <div>
+          <div class="cert-name">Agile PM Foundation</div>
+          <div class="cert-org">Project Management Institute · 2023</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🟡</div>
+        <div>
+          <div class="cert-name">Lean Yellow Belt</div>
+          <div class="cert-org">Amazon KNET · Internal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Colleagues Say</h2>
+    <div class="section-divider"></div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <blockquote>"Kanika had really helped to drive this from start to finish. She drove this with the utmost patience, reaching out to multiple stakeholders for clarifications, approvals, data, and impact calculations. It started very small but finally ended with a huge savings of 4 MM USD annually."</blockquote>
+        <div class="source"><strong>O A V Raviteja</strong> — Associate Project Manager, Amazon Development Centre India</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Her approach for identifying and flagging a gap resulted in improving the experience of 35,000 team members globally. She has moved through multiple roles to support her learning curve."</blockquote>
+        <div class="source"><strong>Abhishek Pandey</strong> — Senior Manager, Amazon (managed Kanika directly)</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"In every request to our engineering team, she delivered well-defined problem statements, clear goals, helpful resources, and realistic data-backed impact analyses. I attribute Kanika's success largely to her ownership, bias for action, and relentlessly high standards."</blockquote>
+        <div class="source"><strong>Adam Thom</strong> — ML Data Associate &amp; Full-Stack Developer, Amazon</div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Positive attitude and self-starter barely scratch the surface."</blockquote>
+        <div class="source"><strong>Rose Rugosa</strong> — Program Manager, Amazon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="section-divider"></div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">MBA in International Management</div>
+        <div class="edu-inst">Hochschule Pforzheim, Germany &nbsp;·&nbsp; Oct 2024 – Aug 2026 &nbsp;·&nbsp; Beta Gamma Sigma Honour Society</div>
+      </div>
+      <div class="edu-grade">Grade 1.5</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">B.Tech in Civil Engineering</div>
+        <div class="edu-inst">Jawaharlal Nehru Technological University, Hyderabad, India &nbsp;·&nbsp; Beta Gamma Sigma International Business Honour Society</div>
+      </div>
+      <div class="edu-grade">76%</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-muted); font-size:0.9rem;">I'm targeting full-time roles from <strong>August 2026</strong> in Germany and Europe across Product Management, Programme Management, PMO, Business Transformation, Operations Strategy, and Digital Transformation.</p>
+    <div class="contact-grid">
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="contact-link" target="_blank">
+        <span class="icon">💼</span> LinkedIn — kanikassinghh
+      </a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="contact-link">
+        <span class="icon">📧</span> kanikasinghtaurus@gmail.com
+      </a>
+      <a href="https://github.com/kanikasingh6" class="contact-link" target="_blank">
+        <span class="icon">🐙</span> GitHub — kanikasingh6
+      </a>
+      <span class="contact-link" style="cursor:default;">
+        <span class="icon">📍</span> Pforzheim, Baden-Württemberg, Germany
+      </span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kanika Singh &nbsp;·&nbsp; Pforzheim, Germany &nbsp;·&nbsp; Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
