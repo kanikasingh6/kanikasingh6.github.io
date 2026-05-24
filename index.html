@@ -1,720 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kanika Singh — Project & Program Manager | Business Transformation</title>
-  <meta name="description" content="Kanika Singh — Engineer-turned-program manager with 8+ years at Amazon. MBA Pforzheim (Grade 1.5). Open to PM, PMO, Transformation roles in Germany & Europe from Aug 2026." />
+  <meta name="description" content="Kanika Singh — PM, PMO & Business Transformation leader. 8+ years Amazon. MBA Pforzheim Grade 1.5. Open to full-time roles in Germany & Europe from Aug 2026."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    /* ─── DESIGN TOKENS ────────────────────────────────── */
-    :root {
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root{
       --orange:      #E07228;
-      --orange-light:#F5913A;
-      --orange-pale: #FFF3E8;
-      --orange-mid:  #FDE9D2;
-      --cream:       #FAF8F5;
-      --cream-dark:  #F2EDE6;
-      --navy:        #1A1B2E;
-      --navy-mid:    #252640;
+      --orange-h:    #C85E18;
+      --orange-pale: #FEF3E8;
+      --orange-mid:  #FCDDB8;
+      --bg:          #FAFAF7;        /* single page background */
       --white:       #FFFFFF;
-      --text:        #1A1B2E;
-      --text-mid:    #3D3E56;
+      --navy:        #14152A;        /* hero & footer only */
+      --text:        #18192E;
+      --text-mid:    #3C3D5A;
       --text-muted:  #6B6C88;
-      --border:      #E8E2D9;
-      --radius-sm:   6px;
-      --radius:      12px;
-      --radius-lg:   20px;
+      --border:      #E8E3DA;
+      --border-soft: #F0EBE3;
 
-      /* Typography scale — consistent everywhere */
-      --fs-xs:   0.8rem;    /* 12.8px — labels, tags */
-      --fs-sm:   0.9rem;    /* 14.4px — secondary text */
-      --fs-base: 1rem;      /* 16px   — body */
-      --fs-md:   1.1rem;    /* 17.6px — lead text */
-      --fs-lg:   1.35rem;   /* 21.6px — card headings */
-      --fs-xl:   1.75rem;   /* 28px   — section titles */
-      --fs-2xl:  2.5rem;    /* 40px   — hero subtitle */
-      --fs-3xl:  3.8rem;    /* 61px   — hero name */
+      /* Type scale */
+      --f-xs:   0.78rem;
+      --f-sm:   0.9rem;
+      --f-base: 1.0rem;
+      --f-md:   1.1rem;
+      --f-lg:   1.3rem;
+      --f-xl:   1.8rem;
+      --f-2xl:  2.4rem;
+      --f-3xl:  3.6rem;
+      --f-hero: 5rem;
 
-      --weight-regular: 400;
-      --weight-medium:  500;
-      --weight-semi:    600;
-      --weight-bold:    700;
-      --weight-black:   800;
-
-      --line-body:    1.75;
-      --line-heading: 1.2;
+      --r:    12px;
+      --r-sm: 7px;
+      --r-lg: 20px;
     }
 
-    /* ─── RESET ─────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: var(--fs-base);
-      line-height: var(--line-body);
-      color: var(--text);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
+    /* ── RESET ──────────────────────────────────────────── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',system-ui,sans-serif;
+      font-size:var(--f-base);
+      line-height:1.75;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a{text-decoration:none;color:inherit;}
 
-    /* ─── UTILITY ────────────────────────────────────────── */
-    .container { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
-    .section-label {
-      display: inline-block;
-      font-size: var(--fs-xs);
-      font-weight: var(--weight-bold);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 0.6rem;
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap{max-width:1060px;margin:0 auto;padding:0 2rem;}
+    section{padding:5.5rem 0;}
+    .sec-label{
+      display:inline-block;
+      font-size:var(--f-xs);font-weight:700;
+      letter-spacing:.13em;text-transform:uppercase;
+      color:var(--orange);margin-bottom:.5rem;
     }
-    .section-title {
-      font-size: var(--fs-xl);
-      font-weight: var(--weight-black);
-      color: var(--text);
-      line-height: var(--line-heading);
-      margin-bottom: 0.5rem;
+    .sec-title{
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:var(--f-xl);font-weight:800;
+      color:var(--text);line-height:1.15;
+      margin-bottom:.5rem;
     }
-    .section-title-light { color: var(--white); }
-    .section-divider {
-      width: 48px; height: 4px;
-      background: var(--orange);
-      border-radius: 2px;
-      margin-bottom: 2.5rem;
-    }
-    .section-divider-light { background: var(--orange-light); }
-    section { padding: 5rem 0; }
+    .sec-rule{width:44px;height:4px;background:var(--orange);border-radius:2px;margin-bottom:2.8rem;}
+    .sec-rule-white{background:rgba(255,255,255,.55);}
 
-    /* ─── NAV ────────────────────────────────────────────── */
-    nav {
-      position: sticky; top: 0; z-index: 200;
-      background: var(--navy);
-      height: 60px;
-      display: flex; align-items: center;
-      padding: 0 2rem;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    /* ── NAV ────────────────────────────────────────────── */
+    nav{
+      position:sticky;top:0;z-index:300;
+      background:var(--navy);
+      height:62px;display:flex;align-items:center;
+      padding:0 2.5rem;
+      box-shadow:0 2px 24px rgba(0,0,0,.4);
     }
-    nav .inner {
-      max-width: 1040px; margin: 0 auto; width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    nav .brand {
-      font-size: var(--fs-base);
-      font-weight: var(--weight-bold);
-      color: var(--white);
-      letter-spacing: 0.01em;
-    }
-    nav .brand span { color: var(--orange-light); }
-    nav ul {
-      list-style: none;
-      display: flex; gap: 2rem;
-    }
-    nav ul a {
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-medium);
-      color: rgba(255,255,255,0.65);
-      transition: color 0.18s;
-      letter-spacing: 0.01em;
-    }
-    nav ul a:hover { color: var(--orange-light); }
+    nav .ni{max-width:1060px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;}
+    .nav-brand{font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.01em;}
+    .nav-brand em{color:var(--orange);font-style:normal;}
+    nav ul{list-style:none;display:flex;gap:2.2rem;}
+    nav ul a{font-size:var(--f-sm);font-weight:500;color:rgba(255,255,255,.6);transition:color .18s;}
+    nav ul a:hover{color:var(--orange);}
 
-    /* ─── HERO ───────────────────────────────────────────── */
-    .hero {
-      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 55%, #2a1f3d 100%);
-      padding: 6rem 2rem 5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero{
+      background:linear-gradient(145deg,#14152A 0%,#1E1F3A 50%,#251435 100%);
+      padding:7rem 2rem 6rem;text-align:center;position:relative;overflow:hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 0%, rgba(224,114,40,0.18) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 100%, rgba(224,114,40,0.08) 0%, transparent 50%);
-      pointer-events: none;
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 65% 55% at 75% -10%,rgba(224,114,40,.25),transparent),
+                  radial-gradient(ellipse 50% 40% at 15% 110%,rgba(224,114,40,.1),transparent);
+      pointer-events:none;
     }
-    .hero-inner { position: relative; z-index: 1; }
-    .hero-pill {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      font-size: var(--fs-xs);
-      font-weight: var(--weight-bold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.45rem 1.4rem;
-      border-radius: 100px;
-      margin-bottom: 1.6rem;
+    .hero-in{position:relative;z-index:1;}
+    .hero-pill{
+      display:inline-block;
+      background:var(--orange);color:#fff;
+      font-size:var(--f-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      padding:.45rem 1.5rem;border-radius:100px;margin-bottom:1.8rem;
     }
-    .hero h1 {
-      font-size: var(--fs-3xl);
-      font-weight: var(--weight-black);
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.02em;
+    .hero h1{
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:var(--f-hero);font-weight:800;
+      color:#fff;line-height:1.02;letter-spacing:-.02em;
+      margin-bottom:.7rem;
     }
-    .hero .subtitle {
-      font-size: var(--fs-2xl);
-      font-weight: var(--weight-medium);
-      color: rgba(255,255,255,0.78);
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
+    .hero-sub{
+      font-size:var(--f-2xl);font-weight:300;
+      color:rgba(255,255,255,.75);line-height:1.3;
+      margin-bottom:.6rem;letter-spacing:-.01em;
     }
-    .hero .meta {
-      font-size: var(--fs-base);
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 2.2rem;
+    .hero-meta{font-size:var(--f-base);color:rgba(255,255,255,.45);margin-bottom:2.4rem;}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:2.6rem;}
+    .hbadge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r-sm);
+      padding:.45rem 1.1rem;font-size:var(--f-sm);font-weight:500;
+      color:rgba(255,255,255,.88);background:rgba(255,255,255,.05);
+      transition:background .2s,border-color .2s;
     }
-    .hero-badges {
-      display: flex; flex-wrap: wrap; gap: 0.75rem;
-      justify-content: center; margin-bottom: 2.4rem;
+    .hbadge:hover{background:rgba(255,255,255,.1);border-color:var(--orange);}
+    .hbadge .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+    .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.2rem;}
+    .btn{display:inline-block;padding:.9rem 2.2rem;border-radius:var(--r-sm);font-size:var(--f-base);font-weight:600;transition:transform .15s,box-shadow .15s,background .15s;}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25);}
+    .btn-o{background:var(--orange);color:#fff;}
+    .btn-o:hover{background:var(--orange-h);}
+    .btn-g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+    .btn-g:hover{border-color:var(--orange);color:var(--orange);}
+    .hero-quote{
+      max-width:700px;margin:0 auto;
+      background:rgba(255,255,255,.05);
+      border-left:4px solid var(--orange);
+      border-radius:0 var(--r-sm) var(--r-sm) 0;
+      padding:1.6rem 2rem;text-align:left;
     }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1.5px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-sm);
-      padding: 0.45rem 1.1rem;
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-medium);
-      color: rgba(255,255,255,0.88);
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(4px);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .hero-badge:hover { background: rgba(255,255,255,0.12); border-color: var(--orange-light); }
-    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .btn {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      border-radius: var(--radius-sm);
-      font-size: var(--fs-base);
-      font-weight: var(--weight-semi);
-      letter-spacing: 0.01em;
-      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.25); }
-    .btn-orange {
-      background: var(--orange);
-      color: var(--white);
-    }
-    .btn-orange:hover { background: var(--orange-light); }
-    .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.35);
-    }
-    .btn-ghost:hover { border-color: var(--orange-light); color: var(--orange-light); }
-    .hero-quote {
-      max-width: 680px; margin: 0 auto;
-      background: rgba(255,255,255,0.05);
-      border-left: 4px solid var(--orange);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 1.4rem 1.8rem;
-      text-align: left;
-    }
-    .hero-quote p {
-      font-size: var(--fs-md);
-      font-style: italic;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.65;
-      margin-bottom: 0.6rem;
-    }
-    .hero-quote .attr {
-      font-size: var(--fs-sm);
-      color: rgba(255,255,255,0.45);
-    }
+    .hero-quote p{font-size:var(--f-md);font-style:italic;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:.5rem;}
+    .hero-quote .att{font-size:var(--f-sm);color:rgba(255,255,255,.4);}
 
-    /* ─── METRICS ────────────────────────────────────────── */
-    #metrics { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+    /* ── METRICS ────────────────────────────────────────── */
+    #metrics{background:var(--bg);}
+    .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;}
+    .mc{
+      text-align:center;padding:2.2rem 1.2rem;
+      border-radius:var(--r);background:var(--white);
+      border:1.5px solid var(--border);
+      transition:border-color .2s,box-shadow .2s,transform .2s;
     }
-    .metric-card {
-      text-align: center;
-      padding: 2rem 1.2rem;
-      border-radius: var(--radius);
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .metric-card:hover { border-color: var(--orange); box-shadow: 0 4px 20px rgba(224,114,40,0.12); }
-    .metric-card .num {
-      font-size: 2.4rem;
-      font-weight: var(--weight-black);
-      color: var(--orange);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .metric-card .num.green { color: #22a35a; }
-    .metric-card .label {
-      font-size: var(--fs-sm);
-      color: var(--text-muted);
-      margin-top: 0.6rem;
-      line-height: 1.45;
-      font-weight: var(--weight-medium);
-    }
+    .mc:hover{border-color:var(--orange);box-shadow:0 6px 28px rgba(224,114,40,.13);transform:translateY(-3px);}
+    .mc .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-.02em;}
+    .mc .num.g{color:#1f9455;}
+    .mc .lbl{font-size:var(--f-sm);color:var(--text-muted);margin-top:.5rem;line-height:1.45;font-weight:500;}
 
-    /* ─── ABOUT ──────────────────────────────────────────── */
-    #about { background: var(--cream); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .about-body p {
-      font-size: var(--fs-md);
-      color: var(--text-mid);
-      line-height: var(--line-body);
-      margin-bottom: 1.2rem;
+    /* ── ABOUT ──────────────────────────────────────────── */
+    #about{background:var(--white);}
+    .about-g{display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:start;}
+    .about-body p{font-size:var(--f-md);color:var(--text-mid);line-height:1.8;margin-bottom:1.2rem;}
+    .about-body strong{color:var(--text);font-weight:700;}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem;}
+    .chip{background:var(--orange-pale);color:var(--orange);border:1.5px solid var(--orange-mid);border-radius:100px;padding:.3rem 1rem;font-size:var(--f-sm);font-weight:600;}
+    .stats-col{display:flex;flex-direction:column;gap:1rem;}
+    .stat-card{
+      background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:1.4rem 1.6rem;display:flex;align-items:center;gap:1.2rem;
+      transition:border-color .2s,transform .18s;
     }
-    .about-body p:last-child { margin-bottom: 0; }
-    .about-body strong { color: var(--text); font-weight: var(--weight-semi); }
-    .about-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
-    .chip {
-      background: var(--orange-pale);
-      color: var(--orange);
-      border: 1.5px solid var(--orange-mid);
-      border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-semi);
-    }
-    .about-stats { display: flex; flex-direction: column; gap: 1rem; }
-    .about-stat {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.4rem 1.6rem;
-      display: flex; align-items: center; gap: 1.2rem;
-      transition: border-color 0.2s;
-    }
-    .about-stat:hover { border-color: var(--orange); }
-    .about-stat .stat-icon {
-      width: 48px; height: 48px;
-      background: var(--orange-pale);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-    .about-stat .stat-num {
-      font-size: var(--fs-lg);
-      font-weight: var(--weight-black);
-      color: var(--orange);
-      line-height: 1;
-    }
-    .about-stat .stat-label {
-      font-size: var(--fs-sm);
-      color: var(--text-muted);
-      margin-top: 0.15rem;
-    }
+    .stat-card:hover{border-color:var(--orange);transform:translateX(4px);}
+    .stat-icon{width:48px;height:48px;background:var(--orange-pale);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+    .stat-num{font-size:var(--f-lg);font-weight:800;color:var(--orange);line-height:1;font-family:'Playfair Display',serif;}
+    .stat-lbl{font-size:var(--f-sm);color:var(--text-muted);margin-top:.15rem;}
 
-    /* ─── TIMELINE / EXPERIENCE ──────────────────────────── */
-    #experience { background: var(--white); }
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px; top: 6px; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--orange) 0%, var(--border) 100%);
+    /* ── TIMELINE ───────────────────────────────────────── */
+    #experience{background:var(--bg);}
+    .tl{position:relative;padding-left:2.5rem;}
+    .tl::before{
+      content:'';position:absolute;
+      left:11px;top:8px;bottom:0;width:2px;
+      background:linear-gradient(to bottom,var(--orange) 0%,var(--border) 100%);
     }
-    .tl-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding-left: 2rem;
-    }
-    .tl-item:last-child { margin-bottom: 0; }
+    .tl-item{position:relative;margin-bottom:2.8rem;padding-left:1.8rem;}
+    .tl-item:last-child{margin-bottom:0;}
     /* dot */
-    .tl-dot {
-      position: absolute;
-      left: -2.35rem; top: 4px;
-      width: 22px; height: 22px;
-      background: var(--white);
-      border: 3px solid var(--orange);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 0 4px var(--orange-pale);
-      transition: box-shadow 0.2s;
+    .tl-dot{
+      position:absolute;left:-2.7rem;top:6px;
+      width:24px;height:24px;
+      background:var(--white);border:3px solid var(--orange);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 0 5px var(--orange-pale);
+      transition:box-shadow .2s;
     }
-    .tl-item:hover .tl-dot { box-shadow: 0 0 0 6px var(--orange-mid); }
-    .tl-dot .inner { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; }
+    .tl-dot .inner{width:8px;height:8px;background:var(--orange);border-radius:50%;}
+    .tl-item:hover .tl-dot{box-shadow:0 0 0 7px var(--orange-mid);}
     /* card */
-    .tl-card {
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem 2rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
+    .tl-card{
+      background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:2rem 2.2rem;
+      transition:border-color .2s,box-shadow .2s,transform .2s;
     }
-    .tl-item:hover .tl-card { border-color: var(--orange); box-shadow: 0 4px 24px rgba(224,114,40,0.1); }
-    .tl-period {
-      display: inline-block;
-      font-size: var(--fs-xs);
-      font-weight: var(--weight-bold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--orange);
-      background: var(--orange-pale);
-      border: 1px solid var(--orange-mid);
-      border-radius: 100px;
-      padding: 0.25rem 0.9rem;
-      margin-bottom: 0.8rem;
+    .tl-item:hover .tl-card{border-color:var(--orange);box-shadow:0 6px 28px rgba(224,114,40,.1);transform:translateY(-2px);}
+    .tl-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+    .tl-period{
+      display:inline-block;
+      font-size:var(--f-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--orange);background:var(--orange-pale);border:1px solid var(--orange-mid);
+      border-radius:100px;padding:.25rem 1rem;
     }
-    .tl-role {
-      font-size: var(--fs-lg);
-      font-weight: var(--weight-bold);
-      color: var(--text);
-      line-height: 1.3;
-      margin-bottom: 0.3rem;
+    .tl-current{background:#e8faf0;color:#1a7a42;border-color:#a8e6be;margin-left:.5rem;}
+    /* company logo badge */
+    .co-badge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      border-radius:var(--r-sm);padding:.35rem .85rem;
+      font-size:var(--f-xs);font-weight:800;letter-spacing:.04em;
+      flex-shrink:0;
     }
-    .tl-org {
-      font-size: var(--fs-base);
-      color: var(--text-muted);
-      font-weight: var(--weight-medium);
-      margin-bottom: 0.9rem;
-      display: flex; align-items: center; gap: 0.5rem;
+    .co-amazon{background:#FF9900;color:#111;} /* Amazon orange */
+    .co-ionos{background:#003D8F;color:#fff;}   /* IONOS blue */
+    .co-pf{background:#154360;color:#fff;}       /* Pforzheim navy */
+    .co-badge svg{width:16px;height:16px;fill:currentColor;}
+    .tl-role{font-size:var(--f-lg);font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.3rem;}
+    .tl-org{font-size:var(--f-base);color:var(--text-muted);font-weight:500;margin-bottom:.9rem;display:flex;align-items:center;gap:.4rem;}
+    .tl-summary{font-size:var(--f-base);color:var(--text-mid);line-height:1.75;}
+    .tl-summary strong{color:var(--text);font-weight:600;}
+    /* PM skills strip */
+    .pm-strip{
+      margin-top:1.4rem;padding-top:1.2rem;
+      border-top:1px solid var(--border-soft);
     }
-    .tl-org::before { content: '📍'; font-size: 0.85em; }
-    .tl-summary {
-      font-size: var(--fs-base);
-      color: var(--text-mid);
-      line-height: 1.7;
+    .pm-strip-label{font-size:var(--f-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.7rem;}
+    .pm-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .pm-tag{
+      display:inline-flex;align-items:center;gap:.35rem;
+      background:var(--bg);border:1.5px solid var(--border);
+      border-radius:var(--r-sm);padding:.3rem .85rem;
+      font-size:var(--f-xs);font-weight:600;color:var(--text-mid);
+      transition:border-color .18s,color .18s,background .18s;
     }
-    /* current badge */
-    .tl-current {
-      display: inline-block;
-      background: #e8f9ee; color: #1a7a42;
-      font-size: var(--fs-xs); font-weight: var(--weight-bold);
-      padding: 0.2rem 0.7rem; border-radius: 100px;
-      border: 1px solid #b0e5c0;
-      margin-left: 0.6rem; vertical-align: middle;
+    .pm-tag:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-pale);}
+    .pm-tag .ti{font-size:.9em;}
+
+    /* ── PROJECTS ───────────────────────────────────────── */
+    #projects{background:var(--white);}
+    .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+    .pcard{
+      background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:2.2rem;display:flex;flex-direction:column;
+      transition:border-color .2s,box-shadow .2s,transform .2s;
+    }
+    .pcard:hover{border-color:var(--orange);box-shadow:0 8px 36px rgba(224,114,40,.13);transform:translateY(-4px);}
+    .pcard .p-ico{width:52px;height:52px;background:var(--orange-pale);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;}
+    .pcard h3{font-size:var(--f-lg);font-weight:700;color:var(--text);margin-bottom:.35rem;line-height:1.3;}
+    .pcard .p-imp{font-size:var(--f-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1f9455;margin-bottom:.9rem;}
+    .pcard p{font-size:var(--f-base);color:var(--text-mid);line-height:1.75;flex:1;margin-bottom:1.2rem;}
+    .ptags{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .ptag{background:var(--orange-pale);color:var(--orange);border:1px solid var(--orange-mid);border-radius:var(--r-sm);padding:.25rem .75rem;font-size:var(--f-xs);font-weight:600;}
+
+    /* ── CAPABILITIES ───────────────────────────────────── */
+    #capabilities{background:var(--bg);}
+    .caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+    .ccard{
+      background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:2rem;
+      transition:border-color .2s,box-shadow .2s,transform .2s;
+    }
+    .ccard:hover{border-color:var(--orange);box-shadow:0 6px 24px rgba(224,114,40,.1);transform:translateY(-3px);}
+    .ccard .cc-ico{width:48px;height:48px;background:var(--orange-pale);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1rem;}
+    .ccard h3{font-size:var(--f-base);font-weight:700;color:var(--text);margin-bottom:.5rem;}
+    .ccard p{font-size:var(--f-sm);color:var(--text-muted);line-height:1.65;}
+
+    /* ── SKILLS ─────────────────────────────────────────── */
+    #skills{background:var(--white);}
+    .skill-sec{margin-bottom:2.4rem;}
+    .skill-sec:last-child{margin-bottom:0;}
+    .sg-label{
+      font-size:var(--f-sm);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--text-muted);margin-bottom:.9rem;
+      display:flex;align-items:center;gap:.8rem;
+    }
+    .sg-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .stags{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .stag{
+      background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r-sm);
+      padding:.45rem 1.1rem;font-size:var(--f-sm);font-weight:500;color:var(--text-mid);
+      transition:border-color .18s,color .18s,background .18s;
+    }
+    .stag:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-pale);}
+
+    /* ── CERTS ──────────────────────────────────────────── */
+    #certifications{background:var(--bg);}
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+    .cert{
+      display:flex;align-items:center;gap:1.1rem;
+      background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:1.3rem 1.6rem;
+      transition:border-color .2s,transform .2s;
+    }
+    .cert:hover{border-color:var(--orange);transform:translateX(4px);}
+    .cert-ico{width:46px;height:46px;background:var(--orange-pale);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+    .cert-name{font-size:var(--f-base);font-weight:600;color:var(--text);line-height:1.3;}
+    .cert-org{font-size:var(--f-sm);color:var(--text-muted);margin-top:.15rem;}
+
+    /* ── TESTIMONIALS ───────────────────────────────────── */
+    #testimonials{background:var(--white);}
+    .t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    .tcard{
+      background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:2.2rem;position:relative;
+      transition:border-color .2s,box-shadow .2s,transform .2s;
+    }
+    .tcard:hover{border-color:var(--orange);box-shadow:0 6px 28px rgba(224,114,40,.1);transform:translateY(-3px);}
+    .tcard::before{
+      content:'\201C';position:absolute;top:1.5rem;right:1.8rem;
+      font-size:4.5rem;line-height:1;color:var(--orange-mid);font-family:Georgia,serif;
+    }
+    .tcard blockquote{font-size:var(--f-md);font-style:italic;color:var(--text-mid);line-height:1.75;margin-bottom:1.4rem;}
+    .t-source{font-size:var(--f-sm);color:var(--text-muted);}
+    .t-source strong{color:var(--orange);font-weight:700;}
+    .t-co-badge{
+      display:inline-flex;align-items:center;gap:.4rem;
+      font-size:var(--f-xs);font-weight:700;
+      background:var(--orange-pale);color:var(--orange);
+      border:1px solid var(--orange-mid);border-radius:100px;
+      padding:.2rem .7rem;margin-top:.4rem;
     }
 
-    /* ─── PROJECTS ───────────────────────────────────────── */
-    #projects { background: var(--cream); }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.6rem;
+    /* ── EDUCATION ──────────────────────────────────────── */
+    #education{background:var(--bg);}
+    .edu-items{display:flex;flex-direction:column;gap:1.3rem;}
+    .edu{
+      background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:2rem 2.2rem;display:flex;align-items:flex-start;gap:1.5rem;
+      transition:border-color .2s,transform .2s;
     }
-    .project-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      display: flex; flex-direction: column;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-    .project-card:hover {
-      border-color: var(--orange);
-      box-shadow: 0 8px 32px rgba(224,114,40,0.13);
-      transform: translateY(-3px);
-    }
-    .project-card .p-icon {
-      width: 48px; height: 48px;
-      background: var(--orange-pale);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.1rem;
-    }
-    .project-card h3 {
-      font-size: var(--fs-lg);
-      font-weight: var(--weight-bold);
-      color: var(--text);
-      margin-bottom: 0.4rem;
-      line-height: 1.3;
-    }
-    .project-card .p-impact {
-      font-size: var(--fs-xs);
-      font-weight: var(--weight-bold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a7a42;
-      margin-bottom: 0.9rem;
-    }
-    .project-card p {
-      font-size: var(--fs-base);
-      color: var(--text-mid);
-      line-height: 1.7;
-      flex: 1;
-      margin-bottom: 1.2rem;
-    }
-    .p-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .p-tag {
-      background: var(--orange-pale);
-      color: var(--orange);
-      border: 1px solid var(--orange-mid);
-      border-radius: var(--radius-sm);
-      padding: 0.25rem 0.7rem;
-      font-size: var(--fs-xs);
-      font-weight: var(--weight-semi);
-    }
+    .edu:hover{border-color:var(--orange);transform:translateX(4px);}
+    .edu-ico{width:56px;height:56px;background:var(--orange-pale);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;}
+    .edu-deg{font-size:var(--f-lg);font-weight:700;color:var(--text);margin-bottom:.25rem;}
+    .edu-inst{font-size:var(--f-base);color:var(--text-muted);margin-bottom:.55rem;}
+    .edu-grade{display:inline-block;background:#e8faf0;color:#1a7a42;font-size:var(--f-sm);font-weight:700;padding:.25rem .85rem;border-radius:100px;border:1px solid #a8e6be;}
 
-    /* ─── CAPABILITIES ───────────────────────────────────── */
-    #capabilities { background: var(--navy); }
-    .caps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
+    /* ── LANGUAGES ──────────────────────────────────────── */
+    #languages{background:var(--white);}
+    .lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+    .lang-card{
+      background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
+      padding:1.8rem;text-align:center;
+      transition:border-color .2s,transform .2s;
     }
-    .cap-card {
-      background: rgba(255,255,255,0.04);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .cap-card:hover { border-color: var(--orange-light); background: rgba(255,255,255,0.07); }
-    .cap-icon {
-      width: 44px; height: 44px;
-      background: rgba(224,114,40,0.2);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-    .cap-card h3 {
-      font-size: var(--fs-base);
-      font-weight: var(--weight-bold);
-      color: var(--white);
-      margin-bottom: 0.6rem;
-      line-height: 1.3;
-    }
-    .cap-card p {
-      font-size: var(--fs-sm);
-      color: rgba(255,255,255,0.6);
-      line-height: 1.65;
-    }
+    .lang-card:hover{border-color:var(--orange);transform:translateY(-3px);}
+    .lang-flag{font-size:2.4rem;margin-bottom:.6rem;}
+    .lang-name{font-size:var(--f-lg);font-weight:700;color:var(--text);margin-bottom:.25rem;}
+    .lang-lvl{font-size:var(--f-sm);color:var(--text-muted);margin-bottom:1rem;}
+    .lang-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
+    .lang-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--orange),var(--orange-h));}
 
-    /* ─── SKILLS ─────────────────────────────────────────── */
-    #skills { background: var(--cream); }
-    .skill-section { margin-bottom: 2.2rem; }
-    .skill-section:last-child { margin-bottom: 0; }
-    .skill-group-label {
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-bold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.9rem;
-      display: flex; align-items: center; gap: 0.7rem;
+    /* ── CONTACT ────────────────────────────────────────── */
+    #contact{background:var(--bg);}
+    .contact-intro{font-size:var(--f-md);color:var(--text-mid);line-height:1.75;margin-bottom:2.4rem;max-width:640px;}
+    .contact-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;}
+    .clink{
+      display:inline-flex;align-items:center;gap:.8rem;
+      padding:1rem 1.6rem;background:var(--white);border:1.5px solid var(--border);
+      border-radius:var(--r);font-size:var(--f-base);font-weight:600;color:var(--text);
+      transition:border-color .2s,background .2s,color .2s,transform .18s;
     }
-    .skill-group-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .skill-tag {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 0.45rem 1rem;
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-medium);
-      color: var(--text-mid);
-      transition: border-color 0.18s, color 0.18s;
-    }
-    .skill-tag:hover { border-color: var(--orange); color: var(--orange); }
+    .clink:hover{border-color:var(--orange);background:var(--orange-pale);color:var(--orange);transform:translateY(-2px);}
+    .clink .ci{font-size:1.15rem;}
+    .roles-box{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:2.2rem;}
+    .roles-box h3{font-size:var(--f-lg);font-weight:700;color:var(--text);margin-bottom:1.1rem;}
+    .role-tags{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .rtag{background:var(--orange-pale);color:var(--orange);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);padding:.45rem 1.1rem;font-size:var(--f-sm);font-weight:600;transition:background .18s,transform .15s;}
+    .rtag:hover{background:var(--orange-mid);transform:scale(1.04);}
 
-    /* ─── CERTIFICATIONS ─────────────────────────────────── */
-    #certifications { background: var(--white); }
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer{
+      background:var(--navy);color:rgba(255,255,255,.38);
+      text-align:center;padding:2.4rem 2rem;
+      font-size:var(--f-sm);
     }
-    .cert-card {
-      display: flex; align-items: center; gap: 1rem;
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.6rem;
-      transition: border-color 0.2s;
-    }
-    .cert-card:hover { border-color: var(--orange); }
-    .cert-icon {
-      width: 44px; height: 44px;
-      background: var(--orange-pale);
-      border: 1.5px solid var(--orange-mid);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-    .cert-name {
-      font-size: var(--fs-base);
-      font-weight: var(--weight-semi);
-      color: var(--text);
-      line-height: 1.3;
-    }
-    .cert-org {
-      font-size: var(--fs-sm);
-      color: var(--text-muted);
-      margin-top: 0.2rem;
-    }
+    footer span{color:var(--orange);}
+    footer p+p{margin-top:.4rem;font-size:var(--f-xs);}
 
-    /* ─── TESTIMONIALS ───────────────────────────────────── */
-    #testimonials { background: var(--navy-mid); }
-    .t-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.4rem;
-    }
-    .t-card {
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 2rem;
-      position: relative;
-      transition: border-color 0.2s;
-    }
-    .t-card:hover { border-color: rgba(224,114,40,0.5); }
-    .t-card::before {
-      content: '\201C';
-      position: absolute; top: 1.2rem; right: 1.6rem;
-      font-size: 4rem; line-height: 1;
-      color: rgba(224,114,40,0.25);
-      font-family: Georgia, serif;
-    }
-    .t-card blockquote {
-      font-size: var(--fs-md);
-      font-style: italic;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-    .t-card .t-source {
-      font-size: var(--fs-sm);
-      color: rgba(255,255,255,0.45);
-    }
-    .t-card .t-source strong {
-      color: var(--orange-light);
-      font-weight: var(--weight-semi);
-    }
-
-    /* ─── EDUCATION ──────────────────────────────────────── */
-    #education { background: var(--cream); }
-    .edu-items { display: flex; flex-direction: column; gap: 1.2rem; }
-    .edu-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem 2rem;
-      display: flex; align-items: flex-start; gap: 1.4rem;
-      transition: border-color 0.2s;
-    }
-    .edu-card:hover { border-color: var(--orange); }
-    .edu-icon {
-      width: 52px; height: 52px;
-      background: var(--orange-pale);
-      border: 1.5px solid var(--orange-mid);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      flex-shrink: 0;
-    }
-    .edu-degree {
-      font-size: var(--fs-lg);
-      font-weight: var(--weight-bold);
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .edu-inst {
-      font-size: var(--fs-base);
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-    .edu-grade {
-      display: inline-block;
-      background: #e8f9ee; color: #1a7a42;
-      font-size: var(--fs-sm); font-weight: var(--weight-bold);
-      padding: 0.25rem 0.8rem; border-radius: 100px;
-      border: 1px solid #b0e5c0;
-    }
-
-    /* ─── CONTACT ────────────────────────────────────────── */
-    #contact { background: var(--white); }
-    .contact-intro {
-      font-size: var(--fs-md);
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 2.4rem;
-      max-width: 640px;
-    }
-    .contact-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 0.8rem;
-      padding: 1rem 1.6rem;
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      font-size: var(--fs-base);
-      font-weight: var(--weight-semi);
-      color: var(--text);
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-    }
-    .contact-link:hover { border-color: var(--orange); background: var(--orange-pale); color: var(--orange); }
-    .contact-link .c-icon { font-size: 1.15rem; }
-    .target-roles {
-      margin-top: 3rem;
-      background: var(--cream);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-    }
-    .target-roles h3 {
-      font-size: var(--fs-lg);
-      font-weight: var(--weight-bold);
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    .role-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .role-tag {
-      background: var(--orange-pale);
-      color: var(--orange);
-      border: 1.5px solid var(--orange-mid);
-      border-radius: var(--radius-sm);
-      padding: 0.45rem 1.1rem;
-      font-size: var(--fs-sm);
-      font-weight: var(--weight-semi);
-    }
-
-    /* ─── FOOTER ─────────────────────────────────────────── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 2rem;
-      font-size: var(--fs-sm);
-    }
-    footer span { color: var(--orange-light); }
-
-    /* ─── RESPONSIVE ─────────────────────────────────────── */
-    @media (max-width: 860px) {
-      :root { --fs-3xl: 2.6rem; --fs-2xl: 1.6rem; --fs-xl: 1.4rem; }
-      nav ul { display: none; }
-      .about-grid, .projects-grid, .metrics-grid, .caps-grid,
-      .cert-grid, .t-grid { grid-template-columns: 1fr; }
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      section { padding: 3.5rem 0; }
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:860px){
+      :root{--f-hero:3rem;--f-2xl:1.6rem;--f-xl:1.4rem;}
+      nav ul{display:none;}
+      .about-g,.proj-grid,.metrics-grid,.caps-grid,.cert-grid,.t-grid,.lang-grid{grid-template-columns:1fr;}
+      .metrics-grid{grid-template-columns:repeat(2,1fr);}
+      section{padding:3.5rem 0;}
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ─────────────────────────────────────────────── -->
+<!-- NAV -->
 <nav>
-  <div class="inner">
-    <span class="brand">Kanika <span>Singh</span></span>
+  <div class="ni">
+    <span class="nav-brand">Kanika <em>Singh</em></span>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -726,95 +410,60 @@
   </div>
 </nav>
 
-<!-- ── HERO ─────────────────────────────────────────────── -->
+<!-- HERO -->
 <header class="hero">
-  <div class="hero-inner">
+  <div class="hero-in">
     <div class="hero-pill">Open to Full-Time Roles · Aug 2026 · Germany &amp; Europe</div>
     <h1>Kanika Singh</h1>
-    <p class="subtitle">Project &amp; Program Manager &nbsp;·&nbsp; Business Transformation &nbsp;·&nbsp; Strategic Operations</p>
-    <p class="meta">📍 Pforzheim, Germany &nbsp;&nbsp;|&nbsp;&nbsp; MBA Pforzheim University · Grade 1.5</p>
-
+    <p class="hero-sub">Project &amp; Program Manager &nbsp;·&nbsp; Business Transformation &nbsp;·&nbsp; Strategic Operations</p>
+    <p class="hero-meta">📍 Pforzheim, Germany &nbsp;|&nbsp; MBA Pforzheim University · Grade 1.5</p>
     <div class="hero-badges">
-      <a href="https://www.linkedin.com/in/kanikassinghh" class="hero-badge" target="_blank">
-        <span class="dot" style="background:#0077B5"></span> LinkedIn
-      </a>
-      <a href="mailto:kanikasinghtaurus@gmail.com" class="hero-badge">
-        <span class="dot" style="background:var(--orange)"></span> kanikasinghtaurus@gmail.com
-      </a>
-      <span class="hero-badge">
-        <span class="dot" style="background:#22a35a"></span> Lean Six Sigma Green Belt
-      </span>
-      <span class="hero-badge">
-        <span class="dot" style="background:#a78bfa"></span> English · Hindi · German B1→B2
-      </span>
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="hbadge" target="_blank"><span class="dot" style="background:#0A66C2"></span>LinkedIn</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="hbadge"><span class="dot" style="background:var(--orange)"></span>kanikasinghtaurus@gmail.com</a>
+      <span class="hbadge"><span class="dot" style="background:#22c55e"></span>Lean Six Sigma Green Belt</span>
+      <span class="hbadge"><span class="dot" style="background:#a78bfa"></span>English · Hindi · German B1→B2</span>
     </div>
-
     <div class="hero-cta">
-      <a href="https://www.linkedin.com/in/kanikassinghh" class="btn btn-orange" target="_blank">View LinkedIn Profile</a>
-      <a href="mailto:kanikasinghtaurus@gmail.com" class="btn btn-ghost">Get in Touch</a>
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="btn btn-o" target="_blank">View LinkedIn Profile</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="btn btn-g">Get in Touch</a>
     </div>
-
     <div class="hero-quote">
       <p>"She drove this with the utmost patience… It started very small but finally ended with a huge savings of 4 MM USD annually."</p>
-      <div class="attr">— O A V Raviteja, Associate Project Manager, Amazon Development Centre India</div>
+      <div class="att">— O A V Raviteja, Associate Project Manager, Amazon Development Centre India</div>
     </div>
   </div>
 </header>
 
-<!-- ── METRICS ───────────────────────────────────────────── -->
+<!-- METRICS -->
 <section id="metrics">
-  <div class="container">
-    <div class="section-label">Career Impact at a Glance</div>
-    <div class="section-divider"></div>
+  <div class="wrap">
+    <div class="sec-label">Career Impact at a Glance</div>
+    <div class="sec-rule"></div>
     <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="num">~$4.5M</div>
-        <div class="label">Annual business impact from flagship transformation</div>
-      </div>
-      <div class="metric-card">
-        <div class="num">450+</div>
-        <div class="label">Process improvement projects managed globally</div>
-      </div>
-      <div class="metric-card">
-        <div class="num">1,600+</div>
-        <div class="label">FTE hours saved annually through Lean improvements</div>
-      </div>
-      <div class="metric-card">
-        <div class="num">35,000+</div>
-        <div class="label">Team members impacted by a single systemic fix</div>
-      </div>
-      <div class="metric-card">
-        <div class="num green">+69.5%</div>
-        <div class="label">Improvement in FBA claim success rates</div>
-      </div>
-      <div class="metric-card">
-        <div class="num green">+30%</div>
-        <div class="label">Customer satisfaction improvement at scale</div>
-      </div>
-      <div class="metric-card">
-        <div class="num green">−30%</div>
-        <div class="label">Decision lag cut via Power BI dashboards</div>
-      </div>
-      <div class="metric-card">
-        <div class="num green">+15%</div>
-        <div class="label">Compliance accuracy across 1,000+ audits</div>
-      </div>
+      <div class="mc"><div class="num">~$4.5M</div><div class="lbl">Annual business impact from flagship transformation</div></div>
+      <div class="mc"><div class="num">450+</div><div class="lbl">Process improvement projects managed globally</div></div>
+      <div class="mc"><div class="num">1,600+</div><div class="lbl">FTE hours saved annually through Lean improvements</div></div>
+      <div class="mc"><div class="num">35,000+</div><div class="lbl">Team members impacted by a single systemic fix</div></div>
+      <div class="mc"><div class="num g">+69.5%</div><div class="lbl">Improvement in FBA claim success rates</div></div>
+      <div class="mc"><div class="num g">+30%</div><div class="lbl">Customer satisfaction improvement at scale</div></div>
+      <div class="mc"><div class="num g">−30%</div><div class="lbl">Decision lag cut via Power BI dashboards</div></div>
+      <div class="mc"><div class="num g">+15%</div><div class="lbl">Compliance accuracy across 1,000+ audits</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ─────────────────────────────────────────────── -->
+<!-- ABOUT -->
 <section id="about">
-  <div class="container">
-    <div class="section-label">About</div>
-    <h2 class="section-title">Engineer. Operator. Strategist.</h2>
-    <div class="section-divider"></div>
-    <div class="about-grid">
+  <div class="wrap">
+    <div class="sec-label">About</div>
+    <h2 class="sec-title">Engineer. Operator. Strategist.</h2>
+    <div class="sec-rule"></div>
+    <div class="about-g">
       <div class="about-body">
         <p>I am an engineer-turned-program manager with <strong>8+ years building the structures, reporting systems, and cross-functional coalitions</strong> that allow large organisations to move fast and with confidence.</p>
         <p>I've managed operations at Amazon's global scale — across EU, US, and India — and am now translating that experience into product strategy and digital transformation at <strong>IONOS</strong> while completing my <strong>MBA in International Management (Grade 1.5) at Pforzheim University</strong>.</p>
-        <p>My background is unusual: a <strong>B.Tech in Civil Engineering</strong> gave me systems thinking; Amazon gave me ownership and speed; my MBA is sharpening my strategic lens in the European business context.</p>
-        <div class="about-chips">
+        <p>My background is unusual: a <strong>B.Tech in Civil Engineering</strong> gave me systems thinking and rigour; Amazon gave me ownership, speed, and discipline; my MBA is grounding me in the European business context. I thrive at the <strong>intersection of strategy, execution, and people</strong>.</p>
+        <div class="chips">
           <span class="chip">Lean Six Sigma Green Belt</span>
           <span class="chip">SAP Business Transformation</span>
           <span class="chip">PMI Agile PM</span>
@@ -822,94 +471,118 @@
           <span class="chip">Beta Gamma Sigma</span>
         </div>
       </div>
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="stat-icon">🏭</div>
-          <div>
-            <div class="stat-num">8+ Years</div>
-            <div class="stat-label">Amazon FBA Operations across EU, US &amp; India</div>
-          </div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-icon">📊</div>
-          <div>
-            <div class="stat-num">450+ Projects</div>
-            <div class="stat-label">Global process improvements managed end-to-end</div>
-          </div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-icon">🎓</div>
-          <div>
-            <div class="stat-num">MBA · Grade 1.5</div>
-            <div class="stat-label">International Management, Pforzheim University</div>
-          </div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-icon">🌍</div>
-          <div>
-            <div class="stat-num">3 Languages</div>
-            <div class="stat-label">English (native) · Hindi (native) · German (B1→B2)</div>
-          </div>
-        </div>
+      <div class="stats-col">
+        <div class="stat-card"><div class="stat-icon">🏭</div><div><div class="stat-num">8+ Years</div><div class="stat-lbl">Amazon FBA Operations — EU, US &amp; India</div></div></div>
+        <div class="stat-card"><div class="stat-icon">📊</div><div><div class="stat-num">450+ Projects</div><div class="stat-lbl">Global process improvements, end-to-end</div></div></div>
+        <div class="stat-card"><div class="stat-icon">🎓</div><div><div class="stat-num">MBA · Grade 1.5</div><div class="stat-lbl">International Management, Pforzheim University</div></div></div>
+        <div class="stat-card"><div class="stat-icon">🌍</div><div><div class="stat-num">3 Languages</div><div class="stat-lbl">English (native) · Hindi (native) · German B1→B2</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── EXPERIENCE / TIMELINE ─────────────────────────────── -->
+<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="container">
-    <div class="section-label">Professional Journey</div>
-    <h2 class="section-title">Where I've Been &amp; What I Built</h2>
-    <div class="section-divider"></div>
-    <div class="timeline">
+  <div class="wrap">
+    <div class="sec-label">Professional Journey</div>
+    <h2 class="sec-title">Where I've Been &amp; What I Built</h2>
+    <div class="sec-rule"></div>
+    <div class="tl">
 
+      <!-- IONOS -->
       <div class="tl-item">
         <div class="tl-dot"><div class="inner"></div></div>
         <div class="tl-card">
-          <div class="tl-period">Oct 2025 – Present <span class="tl-current">Current</span></div>
+          <div class="tl-header">
+            <div>
+              <div class="tl-period">Oct 2025 – Present <span class="tl-current">Current</span></div>
+            </div>
+            <span class="co-badge co-ionos">
+              <!-- IONOS text logo -->
+              <svg viewBox="0 0 40 12" width="40" height="12"><text x="0" y="11" font-family="Arial" font-weight="900" font-size="12" fill="white">IONOS</text></svg>
+            </span>
+          </div>
           <div class="tl-role">Working Student — Product Management &amp; Business Analysis</div>
-          <div class="tl-org">IONOS · Karlsruhe, Germany</div>
-          <div class="tl-summary">Built connected Power BI dashboards integrating Adobe Analytics, Elastic, and Looker Studio — cutting decision lag by <strong>30%</strong>. Delivered competitive analysis across <strong>15+ EU market players</strong> that directly shaped Q1 2026 product priorities. Conducted market research for STRATO Sweden expansion and eIDAS QWAC regulatory compliance. Designed AI-enabled workflow automation using Anthropic Claude &amp; MCP.</div>
+          <div class="tl-org">📍 IONOS · Karlsruhe, Germany</div>
+          <div class="tl-summary">
+            Built connected <strong>Power BI dashboards</strong> integrating Adobe Analytics, Elastic &amp; Looker Studio — cutting decision lag by <strong>30%</strong> for the Domains, Hosting &amp; SSL product division. Delivered <strong>competitive analysis across 15+ EU market players</strong> that directly shaped Q1 2026 product priorities. Conducted market research for STRATO Sweden expansion and eIDAS QWAC regulatory compliance. Designed AI-enabled workflows using Anthropic Claude &amp; MCP.
+          </div>
+          <div class="pm-strip">
+            <div class="pm-strip-label">Product Management Activities</div>
+            <div class="pm-tags">
+              <span class="pm-tag"><span class="ti">📄</span> PRD Writing</span>
+              <span class="pm-tag"><span class="ti">🎨</span> UX/UI Wireframes &amp; Mockups</span>
+              <span class="pm-tag"><span class="ti">🗺️</span> Roadmap Prioritisation</span>
+              <span class="pm-tag"><span class="ti">📢</span> Marketing Collaboration &amp; GTM Assets</span>
+              <span class="pm-tag"><span class="ti">📋</span> Backlog Refinement</span>
+              <span class="pm-tag"><span class="ti">🔍</span> Competitive Benchmarking</span>
+              <span class="pm-tag"><span class="ti">📊</span> KPI Definition &amp; Dashboard Design</span>
+              <span class="pm-tag"><span class="ti">⚖️</span> Regulatory Research (eIDAS QWAC)</span>
+              <span class="pm-tag"><span class="ti">🚀</span> Release Notes &amp; Enablement</span>
+              <span class="pm-tag"><span class="ti">🤖</span> AI Workflow Design</span>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- MBA -->
       <div class="tl-item">
         <div class="tl-dot"><div class="inner"></div></div>
         <div class="tl-card">
-          <div class="tl-period">Oct 2024 – Aug 2026</div>
-          <div class="tl-role">MBA in International Management <span style="font-weight:400; color:var(--text-muted); font-size:var(--fs-base);">· Grade 1.5</span></div>
-          <div class="tl-org">Pforzheim University · Germany</div>
+          <div class="tl-header">
+            <div class="tl-period">Oct 2024 – Aug 2026</div>
+            <span class="co-badge co-pf">🎓 Pforzheim University</span>
+          </div>
+          <div class="tl-role">MBA in International Management <span style="font-weight:400;color:var(--text-muted);font-size:var(--f-base);">· Grade 1.5</span></div>
+          <div class="tl-org">📍 Hochschule Pforzheim · Germany</div>
           <div class="tl-summary">Industrial management, digital transformation, and strategy. Member of <strong>Beta Gamma Sigma International Business Honour Society</strong>. Concurrent with industry role at IONOS.</div>
         </div>
       </div>
 
+      <!-- Amazon PM -->
       <div class="tl-item">
         <div class="tl-dot"><div class="inner"></div></div>
         <div class="tl-card">
-          <div class="tl-period">Oct 2019 – Oct 2024</div>
+          <div class="tl-header">
+            <div class="tl-period">Oct 2019 – Oct 2024</div>
+            <span class="co-badge co-amazon">
+              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
+            </span>
+          </div>
           <div class="tl-role">Project Manager — FBA Business Process Improvement &amp; Change Management</div>
-          <div class="tl-org">Amazon · Hyderabad, India</div>
-          <div class="tl-summary">Led <strong>450+ global process improvement initiatives</strong>. Drove the $4.5M flagship FBA Claims Transformation programme across 6 global teams (EU, US, India). Built and led the AIS innovation pipeline for India operations — managing <strong>115+ ideas per half-year</strong>, saving 9,000+ labour hours annually. Represented QA in Weekly Business Reviews with SQL-driven trend analysis.</div>
+          <div class="tl-org">📍 Amazon · Hyderabad, India</div>
+          <div class="tl-summary">Led <strong>450+ global process improvement initiatives</strong> across EU, US, and India. Drove the <strong>$4.5M flagship FBA Claims Transformation</strong> programme across 6 global teams. Built and led the AIS innovation pipeline — managing <strong>115+ ideas per half-year</strong>, saving 9,000+ labour hours annually. Represented QA in Weekly Business Reviews with SQL-driven trend analysis and corrective action plans.</div>
         </div>
       </div>
 
+      <!-- Amazon QA -->
       <div class="tl-item">
         <div class="tl-dot"><div class="inner"></div></div>
         <div class="tl-card">
-          <div class="tl-period">Jul 2017 – Sep 2019</div>
+          <div class="tl-header">
+            <div class="tl-period">Jul 2017 – Sep 2019</div>
+            <span class="co-badge co-amazon">
+              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
+            </span>
+          </div>
           <div class="tl-role">Senior Quality Auditor — FBA Service Quality &amp; Process Governance</div>
-          <div class="tl-org">Amazon · Hyderabad, India</div>
-          <div class="tl-summary">Designed QA frameworks adopted by <strong>3 operational teams</strong>. Built and delivered calibration programmes achieving <strong>95%+ ramp-up within 3 weeks</strong> for 150+ associates. Audited 1,000+ vendor cases; implemented 20+ SOP updates in 2021 alone with ~95% implementation rate.</div>
+          <div class="tl-org">📍 Amazon · Hyderabad, India</div>
+          <div class="tl-summary">Designed QA frameworks adopted by <strong>3 operational teams</strong>. Built calibration programmes achieving <strong>95%+ ramp-up within 3 weeks</strong> for 150+ associates. Audited 1,000+ vendor cases; implemented <strong>20+ SOP updates in 2021</strong> alone with ~95% implementation rate.</div>
         </div>
       </div>
 
+      <!-- Amazon ML -->
       <div class="tl-item">
         <div class="tl-dot"><div class="inner"></div></div>
         <div class="tl-card">
-          <div class="tl-period">Feb 2016 – Jun 2017</div>
+          <div class="tl-header">
+            <div class="tl-period">Feb 2016 – Jun 2017</div>
+            <span class="co-badge co-amazon">
+              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
+            </span>
+          </div>
           <div class="tl-role">ML Data Vendor Management Associate — FBA</div>
-          <div class="tl-org">Amazon · Hyderabad, India</div>
+          <div class="tl-org">📍 Amazon · Hyderabad, India</div>
           <div class="tl-summary">Delivered <strong>33+ Lean process improvements</strong> saving 1,600+ FTE hours annually. Built decision frameworks adopted network-wide. Developed process logic and documentation that became standard reference across the team.</div>
         </div>
       </div>
@@ -918,292 +591,160 @@
   </div>
 </section>
 
-<!-- ── PROJECTS ───────────────────────────────────────────── -->
+<!-- PROJECTS -->
 <section id="projects">
-  <div class="container">
-    <div class="section-label">Featured Projects</div>
-    <h2 class="section-title">Work That Created Real Impact</h2>
-    <div class="section-divider"></div>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="p-icon">🔄</div>
+  <div class="wrap">
+    <div class="sec-label">Featured Projects</div>
+    <h2 class="sec-title">Work That Created Real Impact</h2>
+    <div class="sec-rule"></div>
+    <div class="proj-grid">
+      <div class="pcard">
+        <div class="p-ico">🔄</div>
         <h3>FBA Claims Transformation Programme</h3>
-        <div class="p-impact">~$4.5M annually · +69.5% claim success rate</div>
-        <p>Identified a 30/45-day date range constraint that was causing legitimate FBA false overage claims to age out of the system. Built the business case from scratch, navigated 6 global cross-functional teams, and drove implementation that unlocked ~$383,500/month in additional savings.</p>
-        <div class="p-tags">
-          <span class="p-tag">$4.5M Annual Impact</span>
-          <span class="p-tag">+69.5% Success Rate</span>
-          <span class="p-tag">6 Global Teams</span>
-          <span class="p-tag">Lean Six Sigma</span>
-        </div>
+        <div class="p-imp">~$4.5M annually · +69.5% claim success rate</div>
+        <p>Identified a 30/45-day date range constraint causing legitimate FBA false overage claims to age out. Built the business case, navigated 6 global cross-functional teams, and drove implementation unlocking ~$383,500/month in additional savings.</p>
+        <div class="ptags"><span class="ptag">$4.5M Impact</span><span class="ptag">+69.5% Success Rate</span><span class="ptag">6 Global Teams</span><span class="ptag">Lean Six Sigma</span></div>
       </div>
-
-      <div class="project-card">
-        <div class="p-icon">💡</div>
+      <div class="pcard">
+        <div class="p-ico">💡</div>
         <h3>Amazon Innovation Pipeline (AIS)</h3>
-        <div class="p-impact">9,000+ labour hours saved · 115+ ideas per half-year</div>
-        <p>Led the AIS innovation programme for India operations — full lifecycle from intake to implementation. Built governance structures, coaching programmes, Open Office Hours (58 participants in inaugural session), and extended AIS rights to India associates for the first time.</p>
-        <div class="p-tags">
-          <span class="p-tag">9,000+ Hours Saved</span>
-          <span class="p-tag">450+ Projects</span>
-          <span class="p-tag">~95% Approval Rate</span>
-          <span class="p-tag">EU · US · India</span>
-        </div>
+        <div class="p-imp">9,000+ labour hours saved · 115+ ideas per half-year</div>
+        <p>Led the AIS innovation programme for India operations — full lifecycle from intake to implementation. Built governance structures, coaching programmes, and Open Office Hours (58 participants). Extended AIS rights to India associates for the first time.</p>
+        <div class="ptags"><span class="ptag">9,000+ Hours Saved</span><span class="ptag">450+ Projects</span><span class="ptag">~95% Approval Rate</span><span class="ptag">EU · US · India</span></div>
       </div>
-
-      <div class="project-card">
-        <div class="p-icon">📊</div>
+      <div class="pcard">
+        <div class="p-ico">📊</div>
         <h3>IONOS Product Analytics &amp; Market Intelligence</h3>
-        <div class="p-impact">−30% decision lag · 15+ competitors analysed</div>
-        <p>Built Power BI dashboards integrating Adobe Analytics, Elastic &amp; Looker Studio for Domains, Hosting &amp; SSL product lines. Delivered competitive analysis shaping Q1 2026 roadmap. Conducted eIDAS QWAC compliance and STRATO Sweden market entry research.</p>
-        <div class="p-tags">
-          <span class="p-tag">−30% Decision Lag</span>
-          <span class="p-tag">15+ Competitors</span>
-          <span class="p-tag">Q1 2026 Roadmap</span>
-          <span class="p-tag">Power BI</span>
-        </div>
+        <div class="p-imp">−30% decision lag · 15+ competitors analysed</div>
+        <p>Built Power BI dashboards for Domains, Hosting &amp; SSL division. Competitive analysis shaping Q1 2026 roadmap. Wrote PRDs, created UX wireframes, collaborated with marketing on GTM assets, and conducted eIDAS QWAC &amp; STRATO Sweden research.</p>
+        <div class="ptags"><span class="ptag">−30% Decision Lag</span><span class="ptag">PRD Writing</span><span class="ptag">UX Mockups</span><span class="ptag">Power BI</span></div>
       </div>
-
-      <div class="project-card">
-        <div class="p-icon">🏅</div>
+      <div class="pcard">
+        <div class="p-ico">🏅</div>
         <h3>QA Excellence Framework — Design &amp; Scale</h3>
-        <div class="p-impact">+15% compliance · 150+ associates · 95%+ ramp in 3 weeks</div>
-        <p>Designed and scaled Amazon's FBA QA infrastructure from fragmented frameworks to consistent, scalable systems — audit structures, scoring rubrics, feedback standards, and SOP governance. Built the Calibration Programme for every new hire batch.</p>
-        <div class="p-tags">
-          <span class="p-tag">+15% Compliance</span>
-          <span class="p-tag">150+ Associates</span>
-          <span class="p-tag">3 Teams Adopted</span>
-          <span class="p-tag">20+ SOPs · 2021</span>
-        </div>
+        <div class="p-imp">+15% compliance · 150+ associates · 95%+ ramp in 3 weeks</div>
+        <p>Designed and scaled Amazon's FBA QA infrastructure from fragmented to consistent systems — audit structures, scoring rubrics, feedback standards, SOP governance, and Calibration Programme delivered to every new hire batch.</p>
+        <div class="ptags"><span class="ptag">+15% Compliance</span><span class="ptag">150+ Associates</span><span class="ptag">3 Teams Adopted</span><span class="ptag">20+ SOPs</span></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── CAPABILITIES ───────────────────────────────────────── -->
+<!-- CAPABILITIES -->
 <section id="capabilities">
-  <div class="container">
-    <div class="section-label" style="color:var(--orange-light)">Core Capabilities</div>
-    <h2 class="section-title section-title-light">What I Bring to Every Role</h2>
-    <div class="section-divider section-divider-light"></div>
+  <div class="wrap">
+    <div class="sec-label">Core Capabilities</div>
+    <h2 class="sec-title">What I Bring to Every Role</h2>
+    <div class="sec-rule"></div>
     <div class="caps-grid">
-      <div class="cap-card">
-        <div class="cap-icon">🏗️</div>
-        <h3>Programme &amp; Project Management</h3>
-        <p>End-to-end ownership across complex, multi-team, multi-region environments. RAG reporting, risk escalation, financial tracking, and stakeholder cadences from associate to senior leadership.</p>
-      </div>
-      <div class="cap-card">
-        <div class="cap-icon">📐</div>
-        <h3>Process Design &amp; Lean Transformation</h3>
-        <p>Lean Six Sigma Green Belt. Turns vague process pain into structured, measurable improvement — SOP redesign, workflow automation, and tool enhancements that stick.</p>
-      </div>
-      <div class="cap-card">
-        <div class="cap-icon">📊</div>
-        <h3>KPI Architecture &amp; Data Reporting</h3>
-        <p>Defines KPIs from scratch, builds dashboards in Power BI, Looker Studio, and Elastic. Turns data into management-ready narratives using SQL and Python.</p>
-      </div>
-      <div class="cap-card">
-        <div class="cap-icon">🤝</div>
-        <h3>Cross-Functional Stakeholder Management</h3>
-        <p>Proven interface between senior leadership, engineering, product, and operations. Manages escalations to root-cause resolution with clear corrective action plans.</p>
-      </div>
-      <div class="cap-card">
-        <div class="cap-icon">📦</div>
-        <h3>Product Thinking &amp; Feature Definition</h3>
-        <p>Translates operational insight into product requirements, supports backlog refinement, conducts competitive analysis, and drives feature adoption through GTM enablement.</p>
-      </div>
-      <div class="cap-card">
-        <div class="cap-icon">🔄</div>
-        <h3>Change Management &amp; Adoption</h3>
-        <p>Rolls out tools, frameworks, and processes across distributed teams — training design, stakeholder alignment, and adoption tracking that ensures change actually lands.</p>
-      </div>
+      <div class="ccard"><div class="cc-ico">🏗️</div><h3>Programme &amp; Project Management</h3><p>End-to-end programme ownership across complex, multi-team, multi-region environments. RAG reporting, risk escalation, financial tracking, and stakeholder cadences from associate to senior leadership.</p></div>
+      <div class="ccard"><div class="cc-ico">📐</div><h3>Process Design &amp; Lean Transformation</h3><p>Lean Six Sigma Green Belt. Turns vague process pain into structured, measurable improvement — SOP redesign, workflow automation, and tool enhancements that stick and scale.</p></div>
+      <div class="ccard"><div class="cc-ico">📊</div><h3>KPI Architecture &amp; Data Reporting</h3><p>Defines KPIs from scratch, builds dashboards in Power BI, Looker Studio, and Elastic. Turns data into management-ready narratives using SQL and Python.</p></div>
+      <div class="ccard"><div class="cc-ico">🤝</div><h3>Cross-Functional Stakeholder Management</h3><p>Proven interface between senior leadership, engineering, product, and operations. Manages escalations to root-cause resolution with clear corrective action plans presented to leadership.</p></div>
+      <div class="ccard"><div class="cc-ico">📦</div><h3>Product Thinking &amp; Feature Definition</h3><p>Writes PRDs, creates UX wireframes, translates operational insight into product requirements, supports backlog refinement, conducts competitive analysis, and drives GTM enablement.</p></div>
+      <div class="ccard"><div class="cc-ico">🔄</div><h3>Change Management &amp; Adoption</h3><p>Rolls out tools, frameworks, and processes across distributed teams — training design, stakeholder alignment, and adoption tracking that ensures change actually lands and lasts.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── SKILLS ─────────────────────────────────────────────── -->
+<!-- SKILLS -->
 <section id="skills">
-  <div class="container">
-    <div class="section-label">Skills &amp; Tools</div>
-    <h2 class="section-title">Technical &amp; Professional Toolkit</h2>
-    <div class="section-divider"></div>
-
-    <div class="skill-section">
-      <div class="skill-group-label">Programme &amp; Project Management</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Strategic Programme Management</span>
-        <span class="skill-tag">Lean Six Sigma (Green Belt)</span>
-        <span class="skill-tag">KPI Design &amp; Reporting</span>
-        <span class="skill-tag">Change Management</span>
-        <span class="skill-tag">Risk &amp; Escalation Management</span>
-        <span class="skill-tag">Stakeholder Management</span>
-        <span class="skill-tag">Budget &amp; Financial Tracking</span>
-        <span class="skill-tag">Stage-Gate Governance</span>
+  <div class="wrap">
+    <div class="sec-label">Skills &amp; Tools</div>
+    <h2 class="sec-title">Technical &amp; Professional Toolkit</h2>
+    <div class="sec-rule"></div>
+    <div class="skill-sec">
+      <div class="sg-label">Programme &amp; Project Management</div>
+      <div class="stags">
+        <span class="stag">Strategic Programme Management</span><span class="stag">Lean Six Sigma (Green Belt)</span><span class="stag">KPI Design &amp; Reporting</span><span class="stag">Change Management</span><span class="stag">Risk &amp; Escalation Management</span><span class="stag">Stakeholder Management</span><span class="stag">Budget &amp; Financial Tracking</span><span class="stag">Stage-Gate Governance</span>
       </div>
     </div>
-
-    <div class="skill-section">
-      <div class="skill-group-label">Product Management</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Roadmap Prioritisation</span>
-        <span class="skill-tag">Backlog Refinement</span>
-        <span class="skill-tag">Competitive Analysis</span>
-        <span class="skill-tag">Market Research</span>
-        <span class="skill-tag">GTM Enablement</span>
-        <span class="skill-tag">User Behaviour Analysis</span>
-        <span class="skill-tag">Feature Definition</span>
-        <span class="skill-tag">Regulatory Research (eIDAS)</span>
+    <div class="skill-sec">
+      <div class="sg-label">Product Management</div>
+      <div class="stags">
+        <span class="stag">PRD Writing</span><span class="stag">UX/UI Wireframing &amp; Mockups</span><span class="stag">Roadmap Prioritisation</span><span class="stag">Backlog Refinement</span><span class="stag">Competitive Analysis</span><span class="stag">Market Research</span><span class="stag">GTM Enablement</span><span class="stag">Marketing Collaboration</span><span class="stag">User Behaviour Analysis</span><span class="stag">Feature Definition</span><span class="stag">Regulatory Research (eIDAS)</span>
       </div>
     </div>
-
-    <div class="skill-section">
-      <div class="skill-group-label">Data, Analytics &amp; Reporting</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Adobe Analytics</span>
-        <span class="skill-tag">Looker Studio</span>
-        <span class="skill-tag">Elasticsearch</span>
-        <span class="skill-tag">Excel (Advanced)</span>
+    <div class="skill-sec">
+      <div class="sg-label">Data, Analytics &amp; Reporting</div>
+      <div class="stags">
+        <span class="stag">Power BI</span><span class="stag">SQL</span><span class="stag">Python</span><span class="stag">Adobe Analytics</span><span class="stag">Looker Studio</span><span class="stag">Elasticsearch</span><span class="stag">Excel (Advanced)</span>
       </div>
     </div>
-
-    <div class="skill-section">
-      <div class="skill-group-label">Platforms &amp; Collaboration</div>
-      <div class="skill-tags">
-        <span class="skill-tag">SAP S/4HANA</span>
-        <span class="skill-tag">Jira</span>
-        <span class="skill-tag">Asana</span>
-        <span class="skill-tag">Confluence</span>
-        <span class="skill-tag">SharePoint</span>
-        <span class="skill-tag">MS Office Suite</span>
+    <div class="skill-sec">
+      <div class="sg-label">Platforms &amp; Collaboration</div>
+      <div class="stags">
+        <span class="stag">SAP S/4HANA</span><span class="stag">Jira</span><span class="stag">Asana</span><span class="stag">Confluence</span><span class="stag">SharePoint</span><span class="stag">MS Office Suite</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ── CERTIFICATIONS ─────────────────────────────────────── -->
+<!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="container">
-    <div class="section-label">Credentials</div>
-    <h2 class="section-title">Certifications</h2>
-    <div class="section-divider"></div>
+  <div class="wrap">
+    <div class="sec-label">Credentials</div>
+    <h2 class="sec-title">Certifications</h2>
+    <div class="sec-rule"></div>
     <div class="cert-grid">
-      <div class="cert-card">
-        <div class="cert-icon">🟢</div>
-        <div>
-          <div class="cert-name">Lean Six Sigma Green Belt</div>
-          <div class="cert-org">Simplilearn · 2022</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🔷</div>
-        <div>
-          <div class="cert-name">SAP Certified — Validating Business Transformation</div>
-          <div class="cert-org">SAP · 2026 (valid to Apr 2027)</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">📋</div>
-        <div>
-          <div class="cert-name">PMI Agile Project Management</div>
-          <div class="cert-org">Project Management Institute · 2025</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🤖</div>
-        <div>
-          <div class="cert-name">Model Context Protocol — Advanced Topics</div>
-          <div class="cert-org">Anthropic · 2026</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🤖</div>
-        <div>
-          <div class="cert-name">Claude 101</div>
-          <div class="cert-org">Anthropic · 2024</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🔄</div>
-        <div>
-          <div class="cert-name">Scrum Advanced</div>
-          <div class="cert-org">LinkedIn Learning · 2025</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">📋</div>
-        <div>
-          <div class="cert-name">Agile PM Foundation</div>
-          <div class="cert-org">Project Management Institute · 2023</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">🟡</div>
-        <div>
-          <div class="cert-name">Lean Yellow Belt</div>
-          <div class="cert-org">Amazon KNET · Internal</div>
-        </div>
-      </div>
+      <div class="cert"><div class="cert-ico">🟢</div><div><div class="cert-name">Lean Six Sigma Green Belt</div><div class="cert-org">Simplilearn · 2022</div></div></div>
+      <div class="cert"><div class="cert-ico">🔷</div><div><div class="cert-name">SAP Certified — Validating Business Transformation</div><div class="cert-org">SAP · 2026 (valid to Apr 2027)</div></div></div>
+      <div class="cert"><div class="cert-ico">📋</div><div><div class="cert-name">PMI Agile Project Management</div><div class="cert-org">Project Management Institute · 2025</div></div></div>
+      <div class="cert"><div class="cert-ico">🤖</div><div><div class="cert-name">Model Context Protocol — Advanced Topics</div><div class="cert-org">Anthropic · 2026</div></div></div>
+      <div class="cert"><div class="cert-ico">🤖</div><div><div class="cert-name">Claude 101</div><div class="cert-org">Anthropic · 2024</div></div></div>
+      <div class="cert"><div class="cert-ico">🔄</div><div><div class="cert-name">Scrum Advanced</div><div class="cert-org">LinkedIn Learning · 2025</div></div></div>
+      <div class="cert"><div class="cert-ico">📋</div><div><div class="cert-name">Agile PM Foundation</div><div class="cert-org">Project Management Institute · 2023</div></div></div>
+      <div class="cert"><div class="cert-ico">🟡</div><div><div class="cert-name">Lean Yellow Belt</div><div class="cert-org">Amazon KNET · Internal</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+<!-- TESTIMONIALS -->
 <section id="testimonials">
-  <div class="container">
-    <div class="section-label" style="color:var(--orange-light)">Testimonials</div>
-    <h2 class="section-title section-title-light">What Colleagues Say</h2>
-    <div class="section-divider section-divider-light"></div>
+  <div class="wrap">
+    <div class="sec-label">Testimonials</div>
+    <h2 class="sec-title">What Colleagues Say</h2>
+    <div class="sec-rule"></div>
     <div class="t-grid">
-
-      <div class="t-card">
+      <div class="tcard">
         <blockquote>"Kanika had really helped to drive this from start to finish. She drove this with the utmost patience, reaching out to multiple stakeholders for clarifications, approvals, data, and impact calculations. It started very small but finally ended with a huge savings of 4 MM USD annually."</blockquote>
-        <div class="t-source"><strong>O A V Raviteja</strong> — Associate Project Manager, Amazon Development Centre India</div>
+        <div class="t-source"><strong>O A V Raviteja</strong> — Associate Project Manager<br><span class="t-co-badge">🏭 Amazon Development Centre India</span></div>
       </div>
-
-      <div class="t-card">
+      <div class="tcard">
         <blockquote>"Her approach for identifying and flagging a gap resulted in improving the experience of 35,000 team members globally. She has moved through multiple roles to support her learning curve."</blockquote>
-        <div class="t-source"><strong>Abhishek Pandey</strong> — Senior Manager, Amazon (managed Kanika directly)</div>
+        <div class="t-source"><strong>Abhishek Pandey</strong> — Senior Manager (managed Kanika directly)<br><span class="t-co-badge">🏭 Amazon</span></div>
       </div>
-
-      <div class="t-card">
+      <div class="tcard">
         <blockquote>"In every request to our engineering team, she delivered well-defined problem statements, clear goals, helpful resources, and realistic data-backed impact analyses. I attribute Kanika's success largely to her ownership, bias for action, and relentlessly high standards."</blockquote>
-        <div class="t-source"><strong>Adam Thom</strong> — ML Data Associate &amp; Full-Stack Developer, Amazon</div>
+        <div class="t-source"><strong>Adam Thom</strong> — ML Data Associate &amp; Full-Stack Developer<br><span class="t-co-badge">🏭 Amazon</span></div>
       </div>
-
-      <div class="t-card">
+      <div class="tcard">
         <blockquote>"Positive attitude and self-starter barely scratch the surface."</blockquote>
-        <div class="t-source"><strong>Rose Rugosa</strong> — Program Manager, Amazon</div>
+        <div class="t-source"><strong>Rose Rugosa</strong> — Program Manager<br><span class="t-co-badge">🏭 Amazon</span></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── EDUCATION ──────────────────────────────────────────── -->
+<!-- EDUCATION -->
 <section id="education">
-  <div class="container">
-    <div class="section-label">Education</div>
-    <h2 class="section-title">Academic Background</h2>
-    <div class="section-divider"></div>
+  <div class="wrap">
+    <div class="sec-label">Education</div>
+    <h2 class="sec-title">Academic Background</h2>
+    <div class="sec-rule"></div>
     <div class="edu-items">
-      <div class="edu-card">
-        <div class="edu-icon">🎓</div>
+      <div class="edu">
+        <div class="edu-ico">🎓</div>
         <div>
-          <div class="edu-degree">MBA in International Management</div>
+          <div class="edu-deg">MBA in International Management</div>
           <div class="edu-inst">Hochschule Pforzheim, Germany &nbsp;·&nbsp; Oct 2024 – Aug 2026 &nbsp;·&nbsp; Beta Gamma Sigma Honour Society</div>
           <span class="edu-grade">Grade 1.5</span>
         </div>
       </div>
-      <div class="edu-card">
-        <div class="edu-icon">🏛️</div>
+      <div class="edu">
+        <div class="edu-ico">🏛️</div>
         <div>
-          <div class="edu-degree">B.Tech in Civil Engineering</div>
+          <div class="edu-deg">B.Tech in Civil Engineering</div>
           <div class="edu-inst">Jawaharlal Nehru Technological University, Hyderabad, India &nbsp;·&nbsp; Beta Gamma Sigma International Business Honour Society</div>
           <span class="edu-grade">76%</span>
         </div>
@@ -1212,49 +753,70 @@
   </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────────── -->
-<section id="contact">
-  <div class="container">
-    <div class="section-label">Get in Touch</div>
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="section-divider"></div>
-    <p class="contact-intro">I'm targeting full-time roles from <strong>August 2026</strong> in Germany and Europe. Always open to conversations about interesting problems and new opportunities.</p>
-    <div class="contact-grid">
-      <a href="https://www.linkedin.com/in/kanikassinghh" class="contact-link" target="_blank">
-        <span class="c-icon">💼</span> LinkedIn — kanikassinghh
-      </a>
-      <a href="mailto:kanikasinghtaurus@gmail.com" class="contact-link">
-        <span class="c-icon">📧</span> kanikasinghtaurus@gmail.com
-      </a>
-      <a href="https://github.com/kanikasingh6" class="contact-link" target="_blank">
-        <span class="c-icon">🐙</span> GitHub — kanikasingh6
-      </a>
-      <span class="contact-link" style="cursor:default;">
-        <span class="c-icon">📍</span> Pforzheim, Baden-Württemberg, Germany
-      </span>
-    </div>
-
-    <div class="target-roles">
-      <h3>🎯 Roles I'm Targeting</h3>
-      <div class="role-tags">
-        <span class="role-tag">Product Management</span>
-        <span class="role-tag">Programme / Project Management</span>
-        <span class="role-tag">PMO &amp; Strategic Operations</span>
-        <span class="role-tag">Business &amp; Digital Transformation</span>
-        <span class="role-tag">Operations Strategy &amp; Supply Chain</span>
-        <span class="role-tag">Technology &amp; SaaS</span>
-        <span class="role-tag">eCommerce &amp; Logistics</span>
-        <span class="role-tag">Energy &amp; Infrastructure</span>
-        <span class="role-tag">Professional Services</span>
+<!-- LANGUAGES -->
+<section id="languages">
+  <div class="wrap">
+    <div class="sec-label">Languages</div>
+    <h2 class="sec-title">Communication Across Cultures</h2>
+    <div class="sec-rule"></div>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-name">English</div>
+        <div class="lang-lvl">Native / Bilingual · C2</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇮🇳</div>
+        <div class="lang-name">Hindi</div>
+        <div class="lang-lvl">Native / Bilingual · C2</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇩🇪</div>
+        <div class="lang-name">German</div>
+        <div class="lang-lvl">B1 · Actively progressing to B2</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-label">Get in Touch</div>
+    <h2 class="sec-title">Let's Connect</h2>
+    <div class="sec-rule"></div>
+    <p class="contact-intro">I'm targeting full-time roles from <strong>August 2026</strong> in Germany and Europe. Always open to conversations about interesting problems and new opportunities.</p>
+    <div class="contact-grid">
+      <a href="https://www.linkedin.com/in/kanikassinghh" class="clink" target="_blank"><span class="ci">💼</span>LinkedIn — kanikassinghh</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="clink"><span class="ci">📧</span>kanikasinghtaurus@gmail.com</a>
+      <a href="https://github.com/kanikasingh6" class="clink" target="_blank"><span class="ci">🐙</span>GitHub — kanikasingh6</a>
+      <span class="clink" style="cursor:default;"><span class="ci">📍</span>Pforzheim, Baden-Württemberg, Germany</span>
+    </div>
+    <div class="roles-box">
+      <h3>🎯 Roles I'm Targeting</h3>
+      <div class="role-tags">
+        <span class="rtag">Product Management</span>
+        <span class="rtag">Programme / Project Management</span>
+        <span class="rtag">PMO &amp; Strategic Operations</span>
+        <span class="rtag">Business &amp; Digital Transformation</span>
+        <span class="rtag">Operations Strategy &amp; Supply Chain</span>
+        <span class="rtag">Technology &amp; SaaS</span>
+        <span class="rtag">eCommerce &amp; Logistics</span>
+        <span class="rtag">Energy &amp; Infrastructure</span>
+        <span class="rtag">Professional Services</span>
+        <span class="rtag">Industrial &amp; Manufacturing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <p>© 2026 <span>Kanika Singh</span> &nbsp;·&nbsp; Pforzheim, Germany &nbsp;·&nbsp; Built with GitHub Pages</p>
-  <p style="margin-top:0.4rem; font-size:0.75rem;">"The goal is not just to solve the problem — it's to make sure the solution actually lands, scales, and lasts."</p>
+  <p>"The goal is not just to solve the problem — it's to make sure the solution actually lands, scales, and lasts."</p>
 </footer>
 
 </body>
