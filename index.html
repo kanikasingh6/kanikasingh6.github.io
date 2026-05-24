@@ -374,6 +374,39 @@
     .rtag{background:var(--orange-pale);color:var(--orange);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);padding:.45rem 1.1rem;font-size:var(--f-sm);font-weight:600;transition:background .18s,transform .15s;}
     .rtag:hover{background:var(--orange-mid);transform:scale(1.04);}
 
+    /* ── READ MORE ──────────────────────────────────────── */
+    .rm-btn{
+      display:inline-flex;align-items:center;gap:.45rem;
+      margin-top:1.3rem;
+      background:none;border:1.5px solid var(--border);
+      border-radius:var(--r-sm);padding:.42rem 1.1rem;
+      font-size:var(--f-sm);font-weight:600;color:var(--text-muted);
+      cursor:pointer;transition:border-color .18s,color .18s,background .18s;
+      font-family:inherit;line-height:1;
+    }
+    .rm-btn:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-pale);}
+    .rm-btn .arr{display:inline-block;transition:transform .25s;font-size:.8em;}
+    .rm-btn.open .arr{transform:rotate(180deg);}
+    .rm-extra{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .rm-extra.open{max-height:800px;}
+    .rm-inner{
+      margin-top:1.3rem;padding-top:1.2rem;
+      border-top:1px solid var(--border-soft);
+    }
+    .rm-inner ul{padding-left:1.3rem;color:var(--text-mid);font-size:var(--f-base);line-height:1;}
+    .rm-inner ul li{margin-bottom:.75rem;line-height:1.7;}
+    .rm-inner ul li strong{color:var(--text);font-weight:600;}
+    /* ── PROJECT CASE STUDY LINK ────────────────────────── */
+    .pcase-link{
+      display:inline-flex;align-items:center;gap:.45rem;
+      margin-top:1rem;padding:.55rem 1.2rem;
+      background:var(--orange-pale);border:1.5px solid var(--orange-mid);
+      border-radius:var(--r-sm);font-size:var(--f-sm);font-weight:700;
+      color:var(--orange);text-decoration:none;
+      transition:background .18s,border-color .18s,color .18s,transform .15s;
+      align-self:flex-start;
+    }
+    .pcase-link:hover{background:var(--orange);color:#fff;border-color:var(--orange);transform:translateY(-1px);}
     /* ── FOOTER ─────────────────────────────────────────── */
     footer{
       background:var(--navy);color:rgba(255,255,255,.38);
@@ -415,7 +448,7 @@
   <div class="hero-in">
     <div class="hero-pill">Open to Full-Time Roles · Aug 2026 · Germany &amp; Europe</div>
     <h1>Kanika Singh</h1>
-    <p class="hero-sub">Project &amp; Program Manager &nbsp;·&nbsp; Business Transformation &nbsp;·&nbsp; Strategic Operations</p>
+    <p class="hero-sub">Project &amp; Program Manager &nbsp;·&nbsp; Business Transformation &nbsp;·&nbsp; Product Operations</p>
     <p class="hero-meta">📍 Pforzheim, Germany &nbsp;|&nbsp; MBA Pforzheim University · Grade 1.5</p>
     <div class="hero-badges">
       <a href="https://www.linkedin.com/in/kanikassinghh" class="hbadge" target="_blank"><span class="dot" style="background:#0A66C2"></span>LinkedIn</a>
@@ -522,6 +555,19 @@
               <span class="pm-tag"><span class="ti">🤖</span> AI Workflow Design</span>
             </div>
           </div>
+          <button class="rm-btn" onclick="toggleRM(this)"><span class="lbl">Show more details</span> <span class="arr">↓</span></button>
+          <div class="rm-extra">
+            <div class="rm-inner">
+              <ul>
+                <li><strong>Product scope:</strong> Domains, Hosting &amp; SSL division serving 6M+ IONOS customers across DE, ES, FR, UK, and Nordic markets.</li>
+                <li><strong>Dashboard architecture:</strong> Designed a unified Power BI workspace integrating Adobe Analytics (front-end behaviour), Elastic APM (infrastructure metrics), and Looker Studio exports — reducing manual reporting effort by ~40% and cutting decision lag by 30%.</li>
+                <li><strong>Competitive intelligence:</strong> Benchmarked 15+ EU players (Hostinger, GoDaddy, STRATO, 1&amp;1, Ionos peers) across pricing, bundling, UX, and regulatory positioning — output directly shaped Q1 2026 product roadmap priorities.</li>
+                <li><strong>Regulatory research:</strong> Mapped eIDAS QWAC requirements and their implications for IONOS certificate product positioning ahead of upcoming EU mandates.</li>
+                <li><strong>AI workflow design:</strong> Built Claude MCP integrations for semi-automated competitive intelligence gathering and internal reporting — reducing research cycle time from 2 days to under 4 hours.</li>
+                <li><strong>STRATO Sweden expansion:</strong> Conducted market entry research including customer segment analysis, localisation requirements, and competitor presence for the STRATO brand.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -545,13 +591,22 @@
         <div class="tl-card">
           <div class="tl-header">
             <div class="tl-period">Oct 2019 – Oct 2024</div>
-            <span class="co-badge co-amazon">
-              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
-            </span>
           </div>
           <div class="tl-role">Project Manager — FBA Business Process Improvement &amp; Change Management</div>
           <div class="tl-org">📍 Amazon · Hyderabad, India</div>
           <div class="tl-summary">Led <strong>450+ global process improvement initiatives</strong> across EU, US, and India. Drove the <strong>$4.5M flagship FBA Claims Transformation</strong> programme across 6 global teams. Built and led the AIS innovation pipeline — managing <strong>115+ ideas per half-year</strong>, saving 9,000+ labour hours annually. Represented QA in Weekly Business Reviews with SQL-driven trend analysis and corrective action plans.</div>
+          <button class="rm-btn" onclick="toggleRM(this)"><span class="lbl">Show more details</span> <span class="arr">↓</span></button>
+          <div class="rm-extra">
+            <div class="rm-inner">
+              <ul>
+                <li><strong>FBA Claims Transformation (flagship):</strong> Identified a 30/45-day date range constraint causing legitimate overages to age out. Built the financial business case (~$383,500/month impact), navigated a complex multi-team approval chain, and led implementation across 6 global teams — delivering ~$4.5M in annual impact and a 69.5% improvement in claim success rate.</li>
+                <li><strong>AIS Programme Lead:</strong> Managed Amazon's India innovation pipeline end-to-end — intake, governance reviews, coaching, and implementation tracking for 115+ ideas per half-year. Created Open Office Hours (58 participants) and extended AIS submission rights to India associates for the first time.</li>
+                <li><strong>WBR reporting:</strong> Built and owned SQL-based dashboards for Weekly Business Reviews — surfacing defect trends, root causes, and corrective action plans to senior leadership across Operations, Finance, and Engineering.</li>
+                <li><strong>Change management:</strong> Rolled out 20+ SOP updates network-wide in 2021 alone, achieving ~95% implementation rate through structured change communications and stakeholder alignment.</li>
+                <li><strong>Team leadership:</strong> Coached and mentored a team of process improvement analysts — setting standards for problem framing, impact modelling, and structured documentation.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -561,13 +616,22 @@
         <div class="tl-card">
           <div class="tl-header">
             <div class="tl-period">Jul 2017 – Sep 2019</div>
-            <span class="co-badge co-amazon">
-              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
-            </span>
           </div>
           <div class="tl-role">Senior Quality Auditor — FBA Service Quality &amp; Process Governance</div>
           <div class="tl-org">📍 Amazon · Hyderabad, India</div>
           <div class="tl-summary">Designed QA frameworks adopted by <strong>3 operational teams</strong>. Built calibration programmes achieving <strong>95%+ ramp-up within 3 weeks</strong> for 150+ associates. Audited 1,000+ vendor cases; implemented <strong>20+ SOP updates in 2021</strong> alone with ~95% implementation rate.</div>
+          <button class="rm-btn" onclick="toggleRM(this)"><span class="lbl">Show more details</span> <span class="arr">↓</span></button>
+          <div class="rm-extra">
+            <div class="rm-inner">
+              <ul>
+                <li><strong>QA framework design:</strong> Built the FBA audit framework from scratch — scoring rubrics, sampling logic, feedback templates, and defect categorisation taxonomy — standardising quality measurement across 3 operational teams that had previously used inconsistent criteria.</li>
+                <li><strong>Calibration Programme:</strong> Designed and ran weekly calibration sessions ensuring 95%+ inter-rater scoring consistency. New hires reached full operational standard within 3 weeks — down from an informal 6-week average.</li>
+                <li><strong>Vendor case auditing:</strong> Personally audited 1,000+ FBA vendor dispute cases; built root-cause categorisation that fed directly into SOP redesign and process correction priorities.</li>
+                <li><strong>SOP governance:</strong> Implemented 20+ SOP updates in 2021 alone, achieving ~95% adoption across teams through structured rollout plans, training sessions, and compliance tracking.</li>
+                <li><strong>QA reporting cadence:</strong> Established weekly defect trending dashboards, corrective action tracking sheets, and quarterly compliance review packs for senior leadership.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -577,13 +641,21 @@
         <div class="tl-card">
           <div class="tl-header">
             <div class="tl-period">Feb 2016 – Jun 2017</div>
-            <span class="co-badge co-amazon">
-              <svg viewBox="0 0 60 18" width="60" height="18"><text x="0" y="14" font-family="Arial" font-weight="900" font-size="14" fill="#111">amazon</text></svg>
-            </span>
           </div>
           <div class="tl-role">ML Data Vendor Management Associate — FBA</div>
           <div class="tl-org">📍 Amazon · Hyderabad, India</div>
           <div class="tl-summary">Delivered <strong>33+ Lean process improvements</strong> saving 1,600+ FTE hours annually. Built decision frameworks adopted network-wide. Developed process logic and documentation that became standard reference across the team.</div>
+          <button class="rm-btn" onclick="toggleRM(this)"><span class="lbl">Show more details</span> <span class="arr">↓</span></button>
+          <div class="rm-extra">
+            <div class="rm-inner">
+              <ul>
+                <li><strong>Lean improvements portfolio:</strong> Delivered 33 documented Lean projects targeting cycle time, error rate, and throughput — each with a pre/post measurement and estimated FTE saving. Cumulative impact: 1,600+ FTE hours saved per year across the vendor management operation.</li>
+                <li><strong>Decision framework:</strong> Built the first structured decision-tree framework for FBA ML vendor escalation routing — reducing incorrect escalation rate and giving associates a clear, auditable path for edge cases. Adopted across the network as standard.</li>
+                <li><strong>Process documentation:</strong> Standardised process documentation formats across the ML Vendor Management team — naming conventions, version control, approval workflows, and template structure. These formats were subsequently adopted as the baseline by adjacent teams.</li>
+                <li><strong>Foundation skills:</strong> This role established core competencies in structured problem-solving, impact quantification, and cross-team influence — the foundation for subsequent programme management and QA leadership roles.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -604,6 +676,7 @@
         <div class="p-imp">~$4.5M annually · +69.5% claim success rate</div>
         <p>Identified a 30/45-day date range constraint causing legitimate FBA false overage claims to age out. Built the business case, navigated 6 global cross-functional teams, and drove implementation unlocking ~$383,500/month in additional savings.</p>
         <div class="ptags"><span class="ptag">$4.5M Impact</span><span class="ptag">+69.5% Success Rate</span><span class="ptag">6 Global Teams</span><span class="ptag">Lean Six Sigma</span></div>
+        <a href="https://github.com/kanikasingh6/fba-claims-transformation" target="_blank" class="pcase-link">📄 View Full Case Study →</a>
       </div>
       <div class="pcard">
         <div class="p-ico">💡</div>
@@ -611,6 +684,7 @@
         <div class="p-imp">9,000+ labour hours saved · 115+ ideas per half-year</div>
         <p>Led the AIS innovation programme for India operations — full lifecycle from intake to implementation. Built governance structures, coaching programmes, and Open Office Hours (58 participants). Extended AIS rights to India associates for the first time.</p>
         <div class="ptags"><span class="ptag">9,000+ Hours Saved</span><span class="ptag">450+ Projects</span><span class="ptag">~95% Approval Rate</span><span class="ptag">EU · US · India</span></div>
+        <a href="https://github.com/kanikasingh6/amazon-innovation-pipeline" target="_blank" class="pcase-link">📄 View Full Case Study →</a>
       </div>
       <div class="pcard">
         <div class="p-ico">📊</div>
@@ -618,6 +692,7 @@
         <div class="p-imp">−30% decision lag · 15+ competitors analysed</div>
         <p>Built Power BI dashboards for Domains, Hosting &amp; SSL division. Competitive analysis shaping Q1 2026 roadmap. Wrote PRDs, created UX wireframes, collaborated with marketing on GTM assets, and conducted eIDAS QWAC &amp; STRATO Sweden research.</p>
         <div class="ptags"><span class="ptag">−30% Decision Lag</span><span class="ptag">PRD Writing</span><span class="ptag">UX Mockups</span><span class="ptag">Power BI</span></div>
+        <a href="https://github.com/kanikasingh6/ionos-product-analytics" target="_blank" class="pcase-link">📄 View Full Case Study →</a>
       </div>
       <div class="pcard">
         <div class="p-ico">🏅</div>
@@ -625,6 +700,7 @@
         <div class="p-imp">+15% compliance · 150+ associates · 95%+ ramp in 3 weeks</div>
         <p>Designed and scaled Amazon's FBA QA infrastructure from fragmented to consistent systems — audit structures, scoring rubrics, feedback standards, SOP governance, and Calibration Programme delivered to every new hire batch.</p>
         <div class="ptags"><span class="ptag">+15% Compliance</span><span class="ptag">150+ Associates</span><span class="ptag">3 Teams Adopted</span><span class="ptag">20+ SOPs</span></div>
+        <a href="https://github.com/kanikasingh6/qa-excellence-framework" target="_blank" class="pcase-link">📄 View Full Case Study →</a>
       </div>
     </div>
   </div>
@@ -800,7 +876,7 @@
       <div class="role-tags">
         <span class="rtag">Product Management</span>
         <span class="rtag">Programme / Project Management</span>
-        <span class="rtag">PMO &amp; Strategic Operations</span>
+        <span class="rtag">PMO &amp; Product Operations</span>
         <span class="rtag">Business &amp; Digital Transformation</span>
         <span class="rtag">Operations Strategy &amp; Supply Chain</span>
         <span class="rtag">Technology &amp; SaaS</span>
@@ -819,5 +895,16 @@
   <p>"The goal is not just to solve the problem — it's to make sure the solution actually lands, scales, and lasts."</p>
 </footer>
 
+
+<script>
+function toggleRM(btn){
+  const extra = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open');
+  extra.classList.toggle('open');
+  btn.querySelector('.arr').textContent = isOpen ? '↓' : '↑';
+  btn.querySelector('.lbl').textContent = isOpen ? 'Show more details' : 'Show less';
+}
+</script>
 </body>
 </html>
