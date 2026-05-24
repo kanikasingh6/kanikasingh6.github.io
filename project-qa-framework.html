@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QA Excellence Framework · Kanika Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --orange:#E07228;--orange-h:#C85E18;--orange-pale:#FEF3E8;--orange-mid:#FCDDB8;
+      --bg:#FAFAF7;--white:#FFFFFF;--navy:#14152A;
+      --text:#18192E;--text-mid:#3C3D5A;--text-muted:#6B6C88;
+      --border:#E8E3DA;--border-soft:#F0EBE3;
+      --f-xs:.78rem;--f-sm:.9rem;--f-base:1rem;--f-md:1.1rem;--f-lg:1.3rem;
+      --f-xl:1.8rem;--r:12px;--r-sm:7px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;font-size:var(--f-base);line-height:1.75;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+    a{text-decoration:none;color:inherit;}
+    nav{position:sticky;top:0;z-index:300;background:var(--navy);height:62px;display:flex;align-items:center;padding:0 2.5rem;box-shadow:0 2px 24px rgba(0,0,0,.4);}
+    nav .ni{max-width:860px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;}
+    .nav-brand{font-size:1.05rem;font-weight:800;color:#fff;}
+    .nav-brand em{color:var(--orange);font-style:normal;}
+    .back-btn{display:inline-flex;align-items:center;gap:.5rem;font-size:var(--f-sm);font-weight:600;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r-sm);padding:.38rem 1rem;transition:color .18s,border-color .18s;}
+    .back-btn:hover{color:var(--orange);border-color:var(--orange);}
+    .proj-hero{background:linear-gradient(145deg,#14152A 0%,#1F2635 55%,#1A2010 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
+    .proj-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 75% -10%,rgba(224,114,40,.22),transparent),radial-gradient(ellipse 45% 40% at 15% 110%,rgba(50,120,50,.15),transparent);pointer-events:none;}
+    .proj-hero-in{position:relative;z-index:1;max-width:760px;margin:0 auto;}
+    .proj-cat{display:inline-block;background:var(--orange);color:#fff;font-size:var(--f-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.3rem;border-radius:100px;margin-bottom:1.5rem;}
+    .proj-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:3rem;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:.8rem;}
+    .proj-hero .subtitle{font-size:var(--f-lg);font-weight:300;color:rgba(255,255,255,.75);line-height:1.45;margin-bottom:2.2rem;}
+    .kpi-strip{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+    .kpi{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r);padding:1rem 1.6rem;text-align:center;min-width:140px;}
+    .kpi-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:800;color:var(--orange);line-height:1;}
+    .kpi-lbl{font-size:var(--f-xs);color:rgba(255,255,255,.55);margin-top:.3rem;font-weight:500;}
+    main{max-width:860px;margin:0 auto;padding:4rem 2rem;}
+    .cs-section{margin-bottom:3.5rem;}
+    .cs-label{font-size:var(--f-xs);font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem;}
+    .cs-title{font-family:'Playfair Display',Georgia,serif;font-size:var(--f-xl);font-weight:800;color:var(--text);margin-bottom:.5rem;line-height:1.2;}
+    .cs-rule{width:40px;height:4px;background:var(--orange);border-radius:2px;margin-bottom:1.6rem;}
+    .cs-body p{font-size:var(--f-md);color:var(--text-mid);line-height:1.8;margin-bottom:1rem;}
+    .cs-body p:last-child{margin-bottom:0;}
+    .cs-body strong{color:var(--text);font-weight:700;}
+    .steps{display:flex;flex-direction:column;gap:1.4rem;}
+    .step{display:flex;gap:1.2rem;align-items:flex-start;}
+    .step-num{width:36px;height:36px;background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--f-sm);font-weight:800;flex-shrink:0;margin-top:.1rem;}
+    .step-body h4{font-size:var(--f-base);font-weight:700;color:var(--text);margin-bottom:.3rem;}
+    .step-body p{font-size:var(--f-base);color:var(--text-mid);line-height:1.75;}
+    .results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+    .res-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem 1.8rem;}
+    .res-card .rnum{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.3rem;}
+    .res-card .rlbl{font-size:var(--f-sm);color:var(--text-muted);font-weight:500;line-height:1.45;}
+    .tools-strip{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .tool-tag{background:var(--orange-pale);color:var(--orange);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);padding:.35rem 1rem;font-size:var(--f-sm);font-weight:600;}
+    .takeaways{display:flex;flex-direction:column;gap:1rem;}
+    .takeaway{background:var(--white);border:1.5px solid var(--border);border-left:4px solid var(--orange);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:1.2rem 1.5rem;}
+    .takeaway h4{font-size:var(--f-base);font-weight:700;color:var(--text);margin-bottom:.3rem;}
+    .takeaway p{font-size:var(--f-sm);color:var(--text-muted);line-height:1.7;}
+    .back-section{text-align:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .back-main{display:inline-flex;align-items:center;gap:.6rem;background:var(--orange);color:#fff;border-radius:var(--r-sm);padding:.9rem 2.2rem;font-size:var(--f-base);font-weight:700;transition:background .15s,transform .15s;}
+    .back-main:hover{background:var(--orange-h);transform:translateY(-2px);}
+    footer{background:var(--navy);color:rgba(255,255,255,.38);text-align:center;padding:2rem;font-size:var(--f-sm);}
+    footer span{color:var(--orange);}
+    @media(max-width:600px){.proj-hero h1{font-size:2rem;}.results-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="ni">
+    <span class="nav-brand">Kanika <em>Singh</em></span>
+    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  </div>
+</nav>
+
+<header class="proj-hero">
+  <div class="proj-hero-in">
+    <div class="proj-cat">✅ Quality Assurance · Operations Excellence</div>
+    <h1>QA Excellence Framework</h1>
+    <p class="subtitle">Designing and deploying a scalable quality assurance system that lifted compliance, accelerated associate ramp-up, and standardised operations across Amazon India.</p>
+    <div class="kpi-strip">
+      <div class="kpi"><div class="kpi-num">+15%</div><div class="kpi-lbl">Compliance rate improvement</div></div>
+      <div class="kpi"><div class="kpi-num">150+</div><div class="kpi-lbl">Associates trained</div></div>
+      <div class="kpi"><div class="kpi-num">95%+</div><div class="kpi-lbl">New-hire ramp rate in 3 weeks</div></div>
+      <div class="kpi"><div class="kpi-num">20+</div><div class="kpi-lbl">SOPs designed and deployed</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="cs-section">
+    <div class="cs-label">The Challenge</div>
+    <h2 class="cs-title">Quality Without a System Is Just Hope</h2>
+    <div class="cs-rule"></div>
+    <div class="cs-body">
+      <p>Amazon India operations ran at high volume, but quality assurance was inconsistent. Different team leads interpreted quality criteria differently, <strong>SOPs were fragmented or absent</strong> for key processes, and new associates were taking weeks longer than necessary to reach operational proficiency.</p>
+      <p>There was no structured QA framework linking individual performance metrics, process compliance, and training pathways. <strong>Errors were corrected reactively</strong> rather than prevented systematically, and quality visibility at the team level was limited.</p>
+      <p>The challenge was to build something that would work at scale: a framework that could train 150+ associates, reduce defect rates, accelerate onboarding, and create a sustainable culture of operational quality without adding bureaucratic overhead.</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-label">My Role</div>
+    <h2 class="cs-title">QA Framework Lead, Amazon India Operations</h2>
+    <div class="cs-rule"></div>
+    <div class="cs-body">
+      <p>I <strong>designed and owned</strong> the QA framework end-to-end: from auditing existing processes and identifying compliance gaps, through writing the SOP library, building the training programme, and rolling out the framework across operational teams.</p>
+      <p>I collaborated with team leads and process owners to ensure the framework was grounded in operational reality, and with senior leadership to align on quality targets and reporting cadences. I also personally delivered a significant portion of the associate training.</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-label">Approach</div>
+    <h2 class="cs-title">Building Quality Into the System</h2>
+    <div class="cs-rule"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Process Audit &amp; Gap Analysis</h4>
+          <p>Conducted a structured audit of existing operational processes, identifying the highest-defect areas, missing documentation, and inconsistencies in how quality standards were being applied across teams. Prioritised gaps by impact and volume.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>SOP Library Design</h4>
+          <p>Wrote 20+ SOPs covering high-volume and high-error-rate operational processes. Designed each SOP for clarity and usability at associate level: clear decision trees, visual process flows, and explicit quality checkpoints. Introduced version control and an ownership model to keep SOPs current.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Training Programme Build</h4>
+          <p>Developed a structured onboarding and quality training programme for new and existing associates. The programme combined process walkthroughs, worked examples, and assessment checkpoints. Achieved a 95%+ proficiency ramp rate within three weeks for new hires.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Quality Metrics &amp; Dashboards</h4>
+          <p>Defined a clear quality measurement model: key compliance metrics, error rate targets, and team-level quality scores. Built dashboards giving team leads real-time visibility into quality performance. Shifted quality management from reactive correction to proactive monitoring.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>Rollout &amp; Continuous Improvement</h4>
+          <p>Managed the phased rollout across 150+ associates, including change communications, team lead enablement, and a feedback loop to refine SOPs based on frontline input. Embedded a continuous improvement cadence into the QA framework so quality standards evolved with operational changes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-label">Results</div>
+    <h2 class="cs-title">Measurable Quality at Scale</h2>
+    <div class="cs-rule"></div>
+    <div class="results-grid">
+      <div class="res-card"><div class="rnum">+15%</div><div class="rlbl">Compliance rate improvement across operational teams</div></div>
+      <div class="res-card"><div class="rnum">150+</div><div class="rlbl">Associates trained on the new QA framework</div></div>
+      <div class="res-card"><div class="rnum">95%+</div><div class="rlbl">New-hire operational proficiency rate within 3 weeks</div></div>
+      <div class="res-card"><div class="rnum">20+</div><div class="rlbl">SOPs designed, deployed, and embedded in daily operations</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-label">Skills &amp; Tools</div>
+    <h2 class="cs-title">What Made This Work</h2>
+    <div class="cs-rule"></div>
+    <div class="tools-strip">
+      <span class="tool-tag">SOP Design</span>
+      <span class="tool-tag">Quality Management</span>
+      <span class="tool-tag">Process Auditing</span>
+      <span class="tool-tag">Training &amp; Facilitation</span>
+      <span class="tool-tag">Lean Six Sigma</span>
+      <span class="tool-tag">Performance Metrics</span>
+      <span class="tool-tag">Dashboard Design</span>
+      <span class="tool-tag">Change Management</span>
+      <span class="tool-tag">Excel (Advanced)</span>
+      <span class="tool-tag">Root Cause Analysis</span>
+      <span class="tool-tag">Continuous Improvement</span>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-label">Key Learnings</div>
+    <h2 class="cs-title">What This Framework Taught Me</h2>
+    <div class="cs-rule"></div>
+    <div class="takeaways">
+      <div class="takeaway"><h4>Clarity scales, complexity does not</h4><p>The SOPs that worked best were the ones a new associate could follow on day one without a manager present. Writing for the frontline, not for the auditor, was the most important design decision.</p></div>
+      <div class="takeaway"><h4>Measurement changes behaviour</h4><p>When team leads could see quality scores in real time, quality conversations changed. What had been an abstract expectation became a visible, manageable metric. Visibility alone drove a meaningful portion of the compliance improvement.</p></div>
+      <div class="takeaway"><h4>Systems require maintenance, not just deployment</h4><p>The feedback loop and continuous improvement cadence were not add-ons; they were the difference between a framework that stayed relevant and one that became shelfware within six months.</p></div>
+      <div class="takeaway"><h4>Training is a system design problem</h4><p>Achieving 95%+ ramp rates in three weeks required designing the training experience as carefully as the processes themselves: sequencing, worked examples, checkpoints, and reinforcement. Good content alone is not enough.</p></div>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a href="index.html" class="back-main">← Back to Portfolio</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 <span>Kanika Singh</span> · Pforzheim, Germany · Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
