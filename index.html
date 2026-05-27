@@ -374,6 +374,20 @@
     .rtag{background:var(--orange-pale);color:var(--orange);border:1.5px solid var(--orange-mid);border-radius:var(--r-sm);padding:.45rem 1.1rem;font-size:var(--f-sm);font-weight:600;transition:background .18s,transform .15s;}
     .rtag:hover{background:var(--orange-mid);transform:scale(1.04);}
 
+    /* ── CONTACT FORM ───────────────────────────────────── */
+    .cf-wrap{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:2.2rem;margin-top:2.4rem;}
+    .cf-wrap h3{font-size:var(--f-lg);font-weight:700;color:var(--text);margin-bottom:1.5rem;}
+    .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    .cf-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+    .cf-field label{font-size:var(--f-sm);font-weight:600;color:var(--text-mid);}
+    .cf-field input,.cf-field textarea{font-family:'Inter',sans-serif;font-size:var(--f-base);color:var(--text);background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:.75rem 1rem;transition:border-color .18s,box-shadow .18s;outline:none;width:100%;}
+    .cf-field input:focus,.cf-field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(224,114,40,.1);}
+    .cf-field textarea{resize:vertical;min-height:130px;line-height:1.6;}
+    .cf-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--orange);color:#fff;border:none;border-radius:var(--r-sm);padding:.9rem 2.2rem;font-family:'Inter',sans-serif;font-size:var(--f-base);font-weight:700;cursor:pointer;transition:background .15s,transform .15s;}
+    .cf-btn:hover{background:var(--orange-h);transform:translateY(-2px);}
+    .cf-note{font-size:var(--f-xs);color:var(--text-muted);margin-top:.8rem;}
+    @media(max-width:600px){.cf-row{grid-template-columns:1fr;}}
+
     /* ── READ MORE ──────────────────────────────────────── */
     .rm-btn{
       display:inline-flex;align-items:center;gap:.45rem;
@@ -452,13 +466,13 @@
     <p class="hero-meta">📍 Pforzheim, Germany &nbsp;|&nbsp; MBA Pforzheim University · Grade 1.5</p>
     <div class="hero-badges">
       <a href="https://www.linkedin.com/in/kanikassinghh" class="hbadge" target="_blank"><span class="dot" style="background:#0A66C2"></span>LinkedIn</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=kanikasinghtaurus@gmail.com" target="_blank" class="hbadge"><span class="dot" style="background:var(--orange)"></span>kanikasinghtaurus@gmail.com</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="hbadge"><span class="dot" style="background:var(--orange)"></span>kanikasinghtaurus@gmail.com</a>
       <span class="hbadge"><span class="dot" style="background:#22c55e"></span>Lean Six Sigma Green Belt</span>
       <span class="hbadge"><span class="dot" style="background:#a78bfa"></span>English · Hindi · German B1→B2</span>
     </div>
     <div class="hero-cta">
       <a href="https://www.linkedin.com/in/kanikassinghh" class="btn btn-o" target="_blank">View LinkedIn Profile</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=kanikasinghtaurus@gmail.com" target="_blank" class="btn btn-g">Get in Touch</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="btn btn-g">Get in Touch</a>
     </div>
     <div class="hero-quote">
       <p>"She drove this with the utmost patience… It started very small but finally ended with a huge savings of 4 MM USD annually."</p>
@@ -867,7 +881,7 @@
     <p class="contact-intro">I'm immediately available for full-time roles in Germany and Europe. Always open to conversations about interesting problems and new opportunities.</p>
     <div class="contact-grid">
       <a href="https://www.linkedin.com/in/kanikassinghh" class="clink" target="_blank"><span class="ci">💼</span>LinkedIn,kanikassinghh</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=kanikasinghtaurus@gmail.com" target="_blank" class="clink"><span class="ci">📧</span>kanikasinghtaurus@gmail.com</a>
+      <a href="mailto:kanikasinghtaurus@gmail.com" class="clink"><span class="ci">📧</span>kanikasinghtaurus@gmail.com</a>
       <a href="https://github.com/kanikasingh6" class="clink" target="_blank"><span class="ci">🐙</span>GitHub,kanikasingh6</a>
       <span class="clink" style="cursor:default;"><span class="ci">📍</span>Pforzheim, Baden-Württemberg, Germany</span>
     </div>
@@ -886,6 +900,34 @@
         <span class="rtag">Industrial &amp; Manufacturing</span>
       </div>
     </div>
+
+    <!-- CONTACT FORM -->
+    <div class="cf-wrap">
+      <h3>✉️ Send a Message</h3>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="e.g. Anna Müller" required/>
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Your Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="e.g. anna@company.com" required/>
+          </div>
+        </div>
+        <div class="cf-field">
+          <label for="cf-subject">Subject</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="e.g. PM role opportunity at ACME"/>
+        </div>
+        <div class="cf-field">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" placeholder="Tell me about the role or opportunity…" required></textarea>
+        </div>
+        <button type="submit" class="cf-btn">Send Message →</button>
+        <p class="cf-note">Your message goes directly to kanikasinghtaurus@gmail.com. No email app needed.</p>
+      </form>
+    </div>
+
   </div>
 </section>
 
